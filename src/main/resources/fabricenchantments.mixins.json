@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "safro.fabric.enchantments.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "ConsumerMixin",
+    "TankMixin",
+    "SugarRushMixin",
+    "SniperMixin",
+    "BeheadingMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
