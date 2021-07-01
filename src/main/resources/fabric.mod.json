@@ -9,8 +9,8 @@
     "Safro"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://curseforge.com/mc-mods/fabric-enchantments",
+    "sources": "https://github.com/Safrodev/fabricenchantments"
   },
 
   "license": "All Rights Reserved",
