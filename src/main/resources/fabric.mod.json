@@ -10,7 +10,8 @@
   ],
   "contact": {
     "homepage": "https://curseforge.com/mc-mods/fabric-enchantments",
-    "sources": "https://github.com/Safrodev/fabricenchantments"
+    "sources": "https://github.com/Safrodev/fabricenchantments",
+    "issues": "https://github.com/Safrodev/fabricenchantments/issues"
   },
 
   "license": "All Rights Reserved",
