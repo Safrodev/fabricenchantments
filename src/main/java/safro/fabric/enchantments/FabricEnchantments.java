@@ -89,6 +89,25 @@ public class FabricEnchantments implements ModInitializer {
             new BeheadingEnchantment()
     );
 
+    /* public static Enchantment DISARM_ENCHANTMENT = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier("fabricenchantments", "disarm"),
+            new DisarmEnchantment()
+    );
+     */
+
+    public static Enchantment PARALYSIS_ENCHANTMENT = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier("fabricenchantments", "paralysis"),
+            new ParalysisEnchantment()
+    );
+
+    public static Enchantment GOT_ENCHANTMENT = Registry.register(
+            Registry.ENCHANTMENT,
+            new Identifier("fabricenchantments", "god_of_thunder"),
+            new GodOfThunderEnchantment()
+    );
+
     @Override
     public void onInitialize() {
 
