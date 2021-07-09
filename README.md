@@ -1,6 +1,9 @@
-# Fabric Enchantments
-An enchantment overhual mod for Fabric.
+# Fabric Example Mod
 
-https://www.curseforge.com/minecraft/mc-mods/fabric-enchantments
+## Setup
 
-Credit to RDKRACZ for Polish translations!
+For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+
+## License
+
+This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.

@@ -2,7 +2,6 @@ package safro.fabric.enchantments.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -38,7 +37,7 @@ public class EnderMindEnchantment extends Enchantment {
 
                 for (int i = 0; i < 16; ++i) {
                     double g = user.getX() + (user.getRandom().nextDouble() - 0.5D) * 16.0D;
-                    double h = MathHelper.clamp(user.getY() + (double) (user.getRandom().nextInt(16) - 8), (double) user.getEntityWorld().getBottomY(), (double) (user.getEntityWorld().getBottomY() + ((ServerWorld) user.getEntityWorld()).getLogicalHeight() - 1));
+                    double h = MathHelper.clamp(user.getY() + (double) (user.getRandom().nextInt(16) - 8), (double) user.getEntityWorld().getHeight(), (double) (user.getEntityWorld().getHeight() + ((ServerWorld) user.getEntityWorld()).getHeight() - 1));
                     double j = user.getZ() + (user.getRandom().nextDouble() - 0.5D) * 16.0D;
                     if (user.hasVehicle()) {
                         user.stopRiding();
