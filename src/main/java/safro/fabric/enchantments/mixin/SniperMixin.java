@@ -33,8 +33,8 @@ public abstract class SniperMixin extends Entity {
         if (attacker != null) {
             mainHandStack = attacker.getMainHandStack();
         }
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SNIPER_ENCHANTMENT, mainHandStack) >= 1)) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.SNIPER_ENCHANTMENT, mainHandStack);
+            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack) >= 1)) {
+                int level = EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack);
                 double startDamage = persistentProjectileEntity.getDamage();
                 double damageModifier = 0;
                 if (level == 1) damageModifier = 1.3D;

@@ -39,7 +39,7 @@ public class BeheadingMixin {
             mainHandStack = user.getMainHandStack();
         }
 
-        if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.BEHEADING_ENCHANTMENT, mainHandStack) >= 1)) {
+        if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.BEHEADING, mainHandStack) >= 1)) {
 
             float HeadChance = 0.05F;
             float RollRandom = user.getRandom().nextFloat();

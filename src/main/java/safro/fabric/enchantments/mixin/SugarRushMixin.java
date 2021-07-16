@@ -34,8 +34,8 @@ public class SugarRushMixin {
             mainHandStack = user.getMainHandStack();
         }
 
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SUGAR_RUSH_ENCHANTMENT, mainHandStack) >= 1 )) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.SUGAR_RUSH_ENCHANTMENT, mainHandStack);
+            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SUGAR_RUSH, mainHandStack) >= 1 )) {
+                int level = EnchantmentHelper.getLevel(FabricEnchantments.SUGAR_RUSH, mainHandStack);
 
                     if (target instanceof LivingEntity){
                         ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, true, false));

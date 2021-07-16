@@ -9,11 +9,18 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class RiseEnchantment extends Enchantment {
     public RiseEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.BOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+
+        if (EnchantmentConfigs.getValue("rise")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "rise"), this);
+        }
     }
 
     @Override

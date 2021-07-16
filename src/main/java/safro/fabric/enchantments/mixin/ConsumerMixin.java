@@ -33,8 +33,8 @@ public class ConsumerMixin {
             mainHandStack = user.getMainHandStack();
         }
 
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER_ENCHANTMENT, mainHandStack) >= 1 )) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER_ENCHANTMENT, mainHandStack);
+            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack) >= 1 )) {
+                int level = EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack);
                 float EffectChance = 0.1F * level;
                 float ConsumerRandom = user.getRandom().nextFloat();
                 if (ConsumerRandom <= EffectChance) {

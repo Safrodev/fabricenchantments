@@ -23,8 +23,8 @@ import safro.fabric.enchantments.FabricEnchantments;
 
     public void TankArmor(CallbackInfo ci) {
 
-        if((EnchantmentHelper.getLevel(FabricEnchantments.TANK_ENCHANTMENT, this.getEquippedStack(EquipmentSlot.CHEST)) >= 1)) {
-            this.setAbsorptionAmount(1.0F * (EnchantmentHelper.getLevel(FabricEnchantments.TANK_ENCHANTMENT, this.getEquippedStack(EquipmentSlot.CHEST))));
+        if((EnchantmentHelper.getLevel(FabricEnchantments.TANK, this.getEquippedStack(EquipmentSlot.CHEST)) >= 1)) {
+            this.setAbsorptionAmount(1.0F * (EnchantmentHelper.getLevel(FabricEnchantments.TANK, this.getEquippedStack(EquipmentSlot.CHEST))));
         }
     }
 }

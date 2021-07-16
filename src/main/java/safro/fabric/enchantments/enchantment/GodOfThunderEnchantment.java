@@ -7,13 +7,20 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.registry.Registry;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class GodOfThunderEnchantment extends Enchantment {
 
     public GodOfThunderEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+
+        if (EnchantmentConfigs.getValue("god_of_thunder")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);
+        }
     }
 
     @Override

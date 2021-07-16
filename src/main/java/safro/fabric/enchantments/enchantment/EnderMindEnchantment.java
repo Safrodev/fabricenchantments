@@ -12,12 +12,19 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class EnderMindEnchantment extends Enchantment {
     public EnderMindEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[] {EquipmentSlot.HEAD});
+
+        if (EnchantmentConfigs.getValue("ender_mind")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ender_mind"), this);
+        }
     }
 
     @Override
@@ -57,6 +64,6 @@ public class EnderMindEnchantment extends Enchantment {
     }
     @Override
     public boolean canAccept (Enchantment other){
-        return super.canAccept(other) && other != FabricEnchantments.NOCTURNAL_ENCHANTMENT;
+        return super.canAccept(other) && other != FabricEnchantments.NOCTURNAL;
     }
 }

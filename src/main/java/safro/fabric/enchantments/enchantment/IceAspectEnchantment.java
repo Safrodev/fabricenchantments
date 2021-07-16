@@ -8,11 +8,18 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class IceAspectEnchantment extends Enchantment {
     public IceAspectEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+
+        if (EnchantmentConfigs.getValue("ice_aspect")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ice_aspect"), this);
+        }
     }
 
     @Override
@@ -27,7 +34,7 @@ public class IceAspectEnchantment extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != Enchantments.FIRE_ASPECT && other != FabricEnchantments.POISON_ASPECT_ENCHANTMENT;
+        return super.canAccept(other) && other != Enchantments.FIRE_ASPECT && other != FabricEnchantments.POISON_ASPECT;
     }
 
     @Override

@@ -32,8 +32,8 @@ public class ExperienceMixin {
             mainHandStack = user.getMainHandStack();
         }
 
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE_ENCHANTMENT, mainHandStack) >= 1)) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE_ENCHANTMENT, mainHandStack);
+            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE, mainHandStack) >= 1)) {
+                int level = EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE, mainHandStack);
                     if (attackingPlayer != null) {
                         attackingPlayer.addExperience(level * 4);
                     }
