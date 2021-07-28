@@ -3,11 +3,13 @@
   "package": "safro.fabric.enchantments.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "ConsumerMixin",
-    "TankMixin",
-    "SugarRushMixin",
-    "SniperMixin",
-    "BeheadingMixin"
+    "enchantment.ConsumerMixin",
+    "enchantment.TankMixin",
+    "enchantment.SugarRushMixin",
+    "enchantment.SniperMixin",
+    "enchantment.BeheadingMixin",
+    "enchantment.AutoSmeltMixin",
+    "AnvilScreenHandlerMixin"
   ],
   "client": [
   ],

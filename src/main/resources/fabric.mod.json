@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fabricenchantments",
-  "version": "0.1.0",
+  "version": "0.4.0",
 
   "name": "Fabric Enchantments",
   "description": "An enchantment overhual mod for Fabric",
@@ -9,12 +9,12 @@
     "Safro"
   ],
   "contact": {
-    "homepage": "https://curseforge.com/mc-mods/fabric-enchantments",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/fabric-enchantments",
     "sources": "https://github.com/Safrodev/fabricenchantments",
     "issues": "https://github.com/Safrodev/fabricenchantments/issues"
   },
 
-  "license": "All Rights Reserved",
+  "license": "Custom License",
   "icon": "assets/fabricenchantments/icon.png",
 
   "environment": "*",
@@ -34,6 +34,6 @@
     "java": ">=16"
   },
   "suggests": {
-    "another-mod": "*"
+      "modmenu": "*"
   }
 }
