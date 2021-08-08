@@ -9,7 +9,7 @@
     "enchantment.SniperMixin",
     "enchantment.BeheadingMixin",
     "enchantment.AutoSmeltMixin",
-    "AnvilScreenHandlerMixin"
+    "enchantment.PumpkinHeadMixin"
   ],
   "client": [
   ],

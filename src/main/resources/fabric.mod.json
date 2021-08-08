@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fabricenchantments",
-  "version": "0.4.0",
+  "version": "0.4.1",
 
   "name": "Fabric Enchantments",
   "description": "An enchantment overhual mod for Fabric",
