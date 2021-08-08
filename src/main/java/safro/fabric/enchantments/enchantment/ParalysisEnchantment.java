@@ -8,11 +8,18 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class ParalysisEnchantment extends Enchantment {
     public ParalysisEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+
+        if (EnchantmentConfigs.getValue("paralysis")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "paralysis"), this);
+        }
     }
 
     @Override
@@ -27,7 +34,7 @@ public class ParalysisEnchantment extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != Enchantments.FIRE_ASPECT && other != FabricEnchantments.POISON_ASPECT_ENCHANTMENT && other != FabricEnchantments.ICE_ASPECT_ENCHANTMENT;
+        return super.canAccept(other) && other != Enchantments.FIRE_ASPECT && other != FabricEnchantments.POISON_ASPECT && other != FabricEnchantments.ICE_ASPECT;
     }
 
     @Override

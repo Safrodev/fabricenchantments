@@ -14,11 +14,18 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class DoubleSwingEnchantment extends Enchantment {
 
     public DoubleSwingEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+
+        if (EnchantmentConfigs.getValue("double_swing")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);
+        }
     }
 
     @Override

@@ -9,7 +9,7 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class BoomShotEnchantment extends Enchantment {
     public BoomShotEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
     }
 
     @Override

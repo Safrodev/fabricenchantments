@@ -1,109 +1,67 @@
 package safro.fabric.enchantments;
 
+import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import safro.fabric.enchantments.config.Config;
+import safro.fabric.enchantments.config.EnchantmentConfigs;
 import safro.fabric.enchantments.enchantment.*;
+
+import java.io.File;
 
 
 public class FabricEnchantments implements ModInitializer {
 
-    public static Enchantment CONSUMER_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "consumer"),
-            new ConsumerEnchantment()
-    );
-
-    public static Enchantment ICE_ASPECT_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "ice_aspect"),
-            new IceAspectEnchantment()
-    );
-
-    public static Enchantment POISON_ASPECT_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "poison_aspect"),
-            new PoisonAspectEnchantment()
-    );
-
-    /* public static Enchantment BOOM_SHOT_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "boom_shot"),
-            new BoomShotEnchantment()
-    );
-
-     */
-
-    public static Enchantment RISE_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "rise"),
-            new RiseEnchantment()
-    );
-
-    public static Enchantment NOCTURNAL_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "nocturnal"),
-            new NocturnalEnchantment()
-    );
-
-    public static Enchantment TANK_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "tank"),
-            new TankEnchantment()
-    );
-
-    public static Enchantment ENDER_MIND_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "ender_mind"),
-            new EnderMindEnchantment()
-    );
-
-    public static Enchantment SUGAR_RUSH_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "sugar_rush"),
-            new SugarRushEnchantment()
-    );
-
-    public static Enchantment EXPERIENCE_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "experience"),
-            new ExperienceEnchantment()
-    );
-
-    public static Enchantment DOUBLE_SWING_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "double_swing"),
-            new DoubleSwingEnchantment()
-    );
-
-    public static Enchantment SNIPER_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "sniper"),
-            new SniperEnchantment()
-    );
-
-    public static Enchantment BEHEADING_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "beheading"),
-            new BeheadingEnchantment()
-    );
-
-    public static Enchantment PARALYSIS_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "paralysis"),
-            new ParalysisEnchantment()
-    );
-
-    public static Enchantment GOT_ENCHANTMENT = Registry.register(
-            Registry.ENCHANTMENT,
-            new Identifier("fabricenchantments", "god_of_thunder"),
-            new GodOfThunderEnchantment()
-    );
+    public static Enchantment AUTO_SMELT;
+    public static Enchantment BEHEADING;
+    public static Enchantment CONSUMER;
+    public static Enchantment DOUBLE_SWING;
+    public static Enchantment ENDER_MIND;
+    public static Enchantment EXPERIENCE;
+    public static Enchantment GOD_OF_THUNDER;
+    public static Enchantment ICE_ASPECT;
+    public static Enchantment NOCTURNAL;
+    public static Enchantment PARALYSIS;
+    public static Enchantment POISON_ASPECT;
+    public static Enchantment RISE;
+    public static Enchantment SNIPER;
+    public static Enchantment SUGAR_RUSH;
+    public static Enchantment TANK;
+    public static Enchantment PUMPKIN_HEAD;
 
     @Override
     public void onInitialize() {
 
+        EnchantmentConfigs.init();
 
+        String defaultConfig =
+                "{\n" +
+                        "  \"regen_enchantment_config_file\": false\n" +
+                        "}";
+
+        File configFile = Config.createFile("config/fabricenchantments/backupconfig.json", defaultConfig, false);
+        JsonObject json = Config.getJsonObject(Config.readFile(configFile));
+
+        EnchantmentConfigs.generateConfigs(json == null || !json.has("regen_enchantment_config_file") || json.get("regen_enchantment_config_file").getAsBoolean());
+        EnchantmentConfigs.loadConfig();
+
+        AUTO_SMELT = new AutoSmeltEnchantment();
+        BEHEADING = new BeheadingEnchantment();
+        CONSUMER = new ConsumerEnchantment();
+        DOUBLE_SWING = new DoubleSwingEnchantment();
+        ENDER_MIND = new EnderMindEnchantment();
+        EXPERIENCE = new ExperienceEnchantment();
+        GOD_OF_THUNDER = new GodOfThunderEnchantment();
+        ICE_ASPECT = new IceAspectEnchantment();
+        NOCTURNAL = new NocturnalEnchantment();
+        PARALYSIS = new ParalysisEnchantment();
+        POISON_ASPECT = new PoisonAspectEnchantment();
+        RISE = new RiseEnchantment();
+        SNIPER = new SniperEnchantment();
+        SUGAR_RUSH = new SugarRushEnchantment();
+        TANK = new TankEnchantment();
+        PUMPKIN_HEAD = new PumpkinHeadEnchantment();
     }
 }
