@@ -34,6 +34,7 @@ public class EnchantmentConfigs {
         ENCHANTS.put("sniper", true);
         ENCHANTS.put("sugar_rush", true);
         ENCHANTS.put("tank", true);
+        ENCHANTS.put("pumpkin_head", true);
     }
 
     public static void loadConfig() {

@@ -30,6 +30,7 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment SNIPER;
     public static Enchantment SUGAR_RUSH;
     public static Enchantment TANK;
+    public static Enchantment PUMPKIN_HEAD;
 
     @Override
     public void onInitialize() {
@@ -62,5 +63,6 @@ public class FabricEnchantments implements ModInitializer {
         SNIPER = new SniperEnchantment();
         SUGAR_RUSH = new SugarRushEnchantment();
         TANK = new TankEnchantment();
+        PUMPKIN_HEAD = new PumpkinHeadEnchantment();
     }
 }
