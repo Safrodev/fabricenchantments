@@ -1,5 +1,5 @@
 {
-  "enchantment.fabricenchantments.consumer": "Consumer",
+  "enchantment.fabricenchantments.consumer": "Consume",
   "enchantment.fabricenchantments.ice_aspect": "Ice Aspect",
   "enchantment.fabricenchantments.poison_aspect": "Poison Aspect",
   "enchantment.fabricenchantments.rise": "Rise",
@@ -14,5 +14,24 @@
   "enchantment.fabricenchantments.paralysis": "Paralysis",
   "enchantment.fabricenchantments.god_of_thunder": "God of Thunder",
   "enchantment.fabricenchantments.auto_smelt": "Auto Smelting",
-  "enchantment.fabricenchantments.pumpkin_head": "Pumpkin Head"
+  "enchantment.fabricenchantments.pumpkin_head": "Pumpkin Head",
+  "enchantment.fabricenchantments.god_of_the_sea": "God of the Sea",
+
+  "enchantment.fabricenchantments.consumer.desc": "Upon killing an entity there is a chance that your hunger will be replenished",
+  "enchantment.fabricenchantments.ice_aspect.desc": "Slows the target down on each hit",
+  "enchantment.fabricenchantments.poison_aspect.desc": "Poisons the target on each hit",
+  "enchantment.fabricenchantments.rise.desc": "Upon being hit, the target floats up in the air for a short duration",
+  "enchantment.fabricenchantments.nocturnal.desc": "When the user is hit in the night they become invisible for a short duration",
+  "enchantment.fabricenchantments.tank.desc": "Grants the user an extra half-heart per level",
+  "enchantment.fabricenchantments.ender_mind.desc": "When the user is hit and is below 4 hearts, they get teleported away a short distance",
+  "enchantment.fabricenchantments.sugar_rush.desc": "Upon killing an entity the wearer becomes fast and has increased jump height",
+  "enchantment.fabricenchantments.experience.desc": "Grants the user more experience when killing entities",
+  "enchantment.fabricenchantments.double_swing.desc": "Has a 5% chance for the user's Axe to swing twice",
+  "enchantment.fabricenchantments.sniper.desc": "The user does more damage the further they are from their target",
+  "enchantment.fabricenchantments.beheading.desc": "Has a 5% chance for Creepers, Zombies, and Skeletons to drop their head when killed",
+  "enchantment.fabricenchantments.paralysis.desc": "Upon hitting a target the target will be frozen and have extremely low attack speed. Lasts for 2 seconds",
+  "enchantment.fabricenchantments.god_of_thunder.desc": "Has a 5% chance for lightning to summon upon the target",
+  "enchantment.fabricenchantments.auto_smelt.desc": "Allows the player to recieve smelted versions of any block they break. Works with every block that can be smelted",
+  "enchantment.fabricenchantments.pumpkin_head.desc": "The user can stare at enderman directly without enderman attacking them",
+  "enchantment.fabricenchantments.god_of_the_sea.desc": "Grants water breathing while the user is holding the enchanted item"
 }

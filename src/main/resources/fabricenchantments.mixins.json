@@ -9,7 +9,9 @@
     "enchantment.SniperMixin",
     "enchantment.BeheadingMixin",
     "enchantment.AutoSmeltMixin",
-    "enchantment.PumpkinHeadMixin"
+    "enchantment.PumpkinHeadMixin",
+    "enchantment.GodOfTheSeaMixin",
+    "enchantment.ShotgunMixin"
   ],
   "client": [
   ],

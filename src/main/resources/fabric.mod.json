@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fabricenchantments",
-  "version": "0.4.1",
+  "version": "0.4.3",
 
   "name": "Fabric Enchantments",
   "description": "An enchantment overhual mod for Fabric",
@@ -14,13 +14,16 @@
     "issues": "https://github.com/Safrodev/fabricenchantments/issues"
   },
 
-  "license": "Custom License",
+  "license": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License",
   "icon": "assets/fabricenchantments/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "safro.fabric.enchantments.FabricEnchantments"
+    ],
+    "mm:early_risers": [
+      "safro.fabric.enchantments.asm.CustomTargets"
     ]
   },
   "mixins": [
