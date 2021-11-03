@@ -1,16 +1,15 @@
 package safro.fabric.enchantments;
 
+import com.chocohead.mm.api.ClassTinkerers;
 import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.enchantment.EnchantmentTarget;
 import safro.fabric.enchantments.config.Config;
 import safro.fabric.enchantments.config.EnchantmentConfigs;
 import safro.fabric.enchantments.enchantment.*;
 
 import java.io.File;
-import java.nio.file.attribute.PosixFileAttributes;
 
 
 public class FabricEnchantments implements ModInitializer {
@@ -31,6 +30,8 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment SUGAR_RUSH;
     public static Enchantment TANK;
     public static Enchantment PUMPKIN_HEAD;
+    public static Enchantment GOD_OF_THE_SEA;
+    public static Enchantment SHOTGUN;
 
     @Override
     public void onInitialize() {
@@ -64,5 +65,7 @@ public class FabricEnchantments implements ModInitializer {
         SUGAR_RUSH = new SugarRushEnchantment();
         TANK = new TankEnchantment();
         PUMPKIN_HEAD = new PumpkinHeadEnchantment();
+        GOD_OF_THE_SEA = new GodOfTheSeaEnchantment();
+        SHOTGUN = new ShotgunEnchantment();
     }
 }

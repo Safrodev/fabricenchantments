@@ -13,7 +13,7 @@ import safro.fabric.enchantments.config.EnchantmentConfigs;
 public class TankEnchantment extends Enchantment {
 
     public TankEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.CHEST});
+        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
 
         if (EnchantmentConfigs.getValue("tank")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "tank"), this);

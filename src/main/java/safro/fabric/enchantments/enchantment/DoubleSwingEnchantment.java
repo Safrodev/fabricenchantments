@@ -1,18 +1,13 @@
 package safro.fabric.enchantments.enchantment;
 
-import net.fabricmc.fabric.impl.tool.attribute.ToolManagerImpl;
+import com.chocohead.mm.api.ClassTinkerers;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolItem;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -20,8 +15,10 @@ import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class DoubleSwingEnchantment extends Enchantment {
 
+    static EnchantmentTarget AXE = ClassTinkerers.getEnum(EnchantmentTarget.class, "AXE");
+
     public DoubleSwingEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, AXE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
         if (EnchantmentConfigs.getValue("double_swing")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);
@@ -38,11 +35,10 @@ public class DoubleSwingEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        float hitchance = 0.05F;
-
-        if (user.getRandom().nextFloat() <= hitchance) {
-            target.damage(user.getRecentDamageSource(), 4.0F);
-            user.getEntityWorld().playSound((PlayerEntity) null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        super.onTargetDamaged(user, target, level);
+        if (user instanceof PlayerEntity player) {
+            target.damage(DamageSource.player(player), player.getStackInHand(Hand.MAIN_HAND).getDamage());
+            player.swingHand(Hand.MAIN_HAND);
         }
     }
 }

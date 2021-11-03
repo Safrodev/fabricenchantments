@@ -35,6 +35,8 @@ public class EnchantmentConfigs {
         ENCHANTS.put("sugar_rush", true);
         ENCHANTS.put("tank", true);
         ENCHANTS.put("pumpkin_head", true);
+        ENCHANTS.put("god_of_the_sea", true);
+        ENCHANTS.put("shotgun", true);
     }
 
     public static void loadConfig() {
