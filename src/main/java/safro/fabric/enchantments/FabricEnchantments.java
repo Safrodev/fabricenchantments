@@ -1,10 +1,8 @@
 package safro.fabric.enchantments;
 
-import com.chocohead.mm.api.ClassTinkerers;
 import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
 import safro.fabric.enchantments.config.Config;
 import safro.fabric.enchantments.config.EnchantmentConfigs;
 import safro.fabric.enchantments.enchantment.*;
@@ -32,6 +30,7 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment PUMPKIN_HEAD;
     public static Enchantment GOD_OF_THE_SEA;
     public static Enchantment SHOTGUN;
+    public static Enchantment GLIMMERING;
 
     @Override
     public void onInitialize() {
@@ -67,5 +66,6 @@ public class FabricEnchantments implements ModInitializer {
         PUMPKIN_HEAD = new PumpkinHeadEnchantment();
         GOD_OF_THE_SEA = new GodOfTheSeaEnchantment();
         SHOTGUN = new ShotgunEnchantment();
+        GLIMMERING = new GlimmeringEnchantment();
     }
 }

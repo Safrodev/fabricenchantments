@@ -4,14 +4,15 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "enchantment.ConsumerMixin",
-    "enchantment.TankMixin",
     "enchantment.SugarRushMixin",
     "enchantment.SniperMixin",
     "enchantment.BeheadingMixin",
     "enchantment.AutoSmeltMixin",
     "enchantment.PumpkinHeadMixin",
     "enchantment.GodOfTheSeaMixin",
-    "enchantment.ShotgunMixin"
+    "enchantment.ShotgunMixin",
+    "enchantment.ExperienceMixin",
+    "enchantment.GlimmeringMixin"
   ],
   "client": [
   ],

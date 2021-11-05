@@ -13,6 +13,16 @@ group = project.maven_group
 repositories {
 
 	maven { url "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/" }
+
+	maven {
+		name = "Jitpack"
+		url 'https://jitpack.io/'
+	}
+
+	maven {
+
+		url 'https://maven.blamejared.com'
+	}
 }
 
 dependencies {
@@ -25,6 +35,13 @@ dependencies {
 		modCompileOnly modRuntime("com.terraformersmc:modmenu:${project.modmenu_version}"),{
 		exclude(group: "net.fabricmc.fabric-api")
 		}
+
+	// ASM
+	modImplementation "com.github.Chocohead:Fabric-ASM:${project.asm_version}"
+	include "com.github.Chocohead:Fabric-ASM:${project.asm_version}"
+
+	// Enchantment Descriptions
+	modCompileOnly modRuntime("net.darkhax.enchdesc:EnchantmentDescriptions-fabric-1.17.1:${project.ed_version}")
 }
 
 processResources {

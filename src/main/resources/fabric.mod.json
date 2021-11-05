@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fabricenchantments",
-  "version": "0.4.3",
+  "version": "0.5.0",
 
   "name": "Fabric Enchantments",
   "description": "An enchantment overhual mod for Fabric",
@@ -14,7 +14,7 @@
     "issues": "https://github.com/Safrodev/fabricenchantments/issues"
   },
 
-  "license": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License",
+  "license": "CC BY-NC-ND 4.0",
   "icon": "assets/fabricenchantments/icon.png",
 
   "environment": "*",

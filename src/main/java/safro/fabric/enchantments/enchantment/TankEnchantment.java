@@ -27,4 +27,12 @@ public class TankEnchantment extends Enchantment {
     public int getMaxLevel() {
         return 5;
     }
+
+    @Override
+    public int getProtectionAmount(int level, DamageSource source) {
+        if (source.bypassesArmor() || source.isUnblockable()) {
+            return level;
+        } else
+            return 0;
+    }
 }

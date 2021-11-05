@@ -37,6 +37,7 @@ public class EnchantmentConfigs {
         ENCHANTS.put("pumpkin_head", true);
         ENCHANTS.put("god_of_the_sea", true);
         ENCHANTS.put("shotgun", true);
+        ENCHANTS.put("glimmering", true);
     }
 
     public static void loadConfig() {
