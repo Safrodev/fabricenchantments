@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.8-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -43,6 +43,11 @@ dependencies {
 	// Enchantment Descriptions
 	modCompileOnly modRuntime("net.darkhax.enchdesc:EnchantmentDescriptions-fabric-1.17.1:${project.ed_version}")
 }
+
+loom {
+	accessWidenerPath = file("src/main/resources/fabricenchantments.accesswidener")
+}
+
 
 processResources {
 	inputs.property "version", project.version

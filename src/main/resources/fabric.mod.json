@@ -38,5 +38,6 @@
   },
   "suggests": {
       "modmenu": "*"
-  }
+  },
+  "accessWidener": "fabricenchantments.accesswidener"
 }

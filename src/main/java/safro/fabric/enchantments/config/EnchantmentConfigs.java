@@ -38,6 +38,7 @@ public class EnchantmentConfigs {
         ENCHANTS.put("god_of_the_sea", true);
         ENCHANTS.put("shotgun", true);
         ENCHANTS.put("glimmering", true);
+        ENCHANTS.put("puncture", true);
     }
 
     public static void loadConfig() {

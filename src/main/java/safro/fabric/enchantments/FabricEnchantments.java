@@ -3,6 +3,8 @@ package safro.fabric.enchantments;
 import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import safro.fabric.enchantments.config.Config;
 import safro.fabric.enchantments.config.EnchantmentConfigs;
 import safro.fabric.enchantments.enchantment.*;
@@ -11,6 +13,8 @@ import java.io.File;
 
 
 public class FabricEnchantments implements ModInitializer {
+
+    public static final Logger LOGGER = LogManager.getLogger("fabricenchantments");
 
     public static Enchantment AUTO_SMELT;
     public static Enchantment BEHEADING;
@@ -31,6 +35,7 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment GOD_OF_THE_SEA;
     public static Enchantment SHOTGUN;
     public static Enchantment GLIMMERING;
+    public static Enchantment PUNCTURE;
 
     @Override
     public void onInitialize() {
@@ -67,5 +72,6 @@ public class FabricEnchantments implements ModInitializer {
         GOD_OF_THE_SEA = new GodOfTheSeaEnchantment();
         SHOTGUN = new ShotgunEnchantment();
         GLIMMERING = new GlimmeringEnchantment();
+        PUNCTURE = new PunctureEnchantment();
     }
 }

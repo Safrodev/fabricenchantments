@@ -12,7 +12,8 @@
     "enchantment.GodOfTheSeaMixin",
     "enchantment.ShotgunMixin",
     "enchantment.ExperienceMixin",
-    "enchantment.GlimmeringMixin"
+    "enchantment.GlimmeringMixin",
+    "enchantment.PunctureMixin"
   ],
   "client": [
   ],
