@@ -13,7 +13,8 @@
     "enchantment.ShotgunMixin",
     "enchantment.ExperienceMixin",
     "enchantment.GlimmeringMixin",
-    "enchantment.PunctureMixin"
+    "enchantment.ChargedBoltMixin",
+    "enchantment.ReplenishMixin"
   ],
   "client": [
   ],

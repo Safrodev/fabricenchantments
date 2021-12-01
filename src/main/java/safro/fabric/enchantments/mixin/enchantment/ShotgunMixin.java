@@ -22,7 +22,7 @@ public abstract class ShotgunMixin extends Entity {
     }
 
     @Inject(method = "onEntityHit", at = @At("TAIL"))
-    private void SniperHit(EntityHitResult entityHitResult, CallbackInfo ci){
+    private void shotgunHit(EntityHitResult entityHitResult, CallbackInfo ci){
         if (!(entityHitResult.getEntity() instanceof LivingEntity)) {
             return;
         }

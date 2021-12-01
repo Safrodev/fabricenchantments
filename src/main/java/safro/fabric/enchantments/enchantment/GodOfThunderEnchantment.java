@@ -1,9 +1,10 @@
 package safro.fabric.enchantments.enchantment;
 
-import com.chocohead.mm.api.ClassTinkerers;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -12,10 +13,8 @@ import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class GodOfThunderEnchantment extends Enchantment {
 
-    static EnchantmentTarget AXE = ClassTinkerers.getEnum(EnchantmentTarget.class, "AXE");
-
     public GodOfThunderEnchantment() {
-        super(Rarity.VERY_RARE, AXE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
         if (EnchantmentConfigs.getValue("god_of_thunder")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);
@@ -45,5 +44,9 @@ public class GodOfThunderEnchantment extends Enchantment {
             lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos));
             user.getEntityWorld().spawnEntity(lightningEntity);
         }
+    }
+
+    public boolean isAcceptableItem(ItemStack stack) {
+        return stack.getItem() instanceof AxeItem;
     }
 }

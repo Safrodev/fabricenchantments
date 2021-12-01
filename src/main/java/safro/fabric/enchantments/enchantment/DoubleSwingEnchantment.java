@@ -1,6 +1,5 @@
 package safro.fabric.enchantments.enchantment;
 
-import com.chocohead.mm.api.ClassTinkerers;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -8,6 +7,8 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,10 +16,8 @@ import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class DoubleSwingEnchantment extends Enchantment {
 
-    static EnchantmentTarget AXE = ClassTinkerers.getEnum(EnchantmentTarget.class, "AXE");
-
     public DoubleSwingEnchantment() {
-        super(Rarity.RARE, AXE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
         if (EnchantmentConfigs.getValue("double_swing")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);
@@ -40,5 +39,9 @@ public class DoubleSwingEnchantment extends Enchantment {
             target.damage(DamageSource.player(player), player.getStackInHand(Hand.MAIN_HAND).getDamage());
             player.swingHand(Hand.MAIN_HAND);
         }
+    }
+
+    public boolean isAcceptableItem(ItemStack stack) {
+        return stack.getItem() instanceof AxeItem;
     }
 }

@@ -35,7 +35,9 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment GOD_OF_THE_SEA;
     public static Enchantment SHOTGUN;
     public static Enchantment GLIMMERING;
-    public static Enchantment PUNCTURE;
+    public static Enchantment CHARGED_BOLT;
+    public static Enchantment PYROMANIA;
+    public static Enchantment REPLENISH;
 
     @Override
     public void onInitialize() {
@@ -72,6 +74,8 @@ public class FabricEnchantments implements ModInitializer {
         GOD_OF_THE_SEA = new GodOfTheSeaEnchantment();
         SHOTGUN = new ShotgunEnchantment();
         GLIMMERING = new GlimmeringEnchantment();
-        PUNCTURE = new PunctureEnchantment();
+        CHARGED_BOLT = new ChargedBoltEnchantment();
+        PYROMANIA = new PyromaniaEnchantment();
+        REPLENISH = new ReplenishEnchantment();
     }
 }

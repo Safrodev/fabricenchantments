@@ -8,13 +8,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.config.EnchantmentConfigs;
 
-public class PunctureEnchantment extends Enchantment {
+public class ChargedBoltEnchantment extends Enchantment {
 
-    public PunctureEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+    public ChargedBoltEnchantment() {
+        super(Rarity.UNCOMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("puncture")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "puncture"), this);
+        if (EnchantmentConfigs.getValue("charged_bolt")) {
+            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "charged_bolt"), this);
         }
     }
 
@@ -22,7 +22,7 @@ public class PunctureEnchantment extends Enchantment {
     public int getMinPower(int level) { return 20 + level; }
 
     @Override
-    public int getMaxLevel() { return 3; }
+    public int getMaxLevel() { return 1; }
 
     @Override
     public boolean canAccept(Enchantment other) {
