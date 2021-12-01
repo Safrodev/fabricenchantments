@@ -18,6 +18,9 @@
   "enchantment.fabricenchantments.god_of_the_sea": "Бог моря",
   "enchantment.fabricenchantments.shotgun": "Картечь",
   "enchantment.fabricenchantments.glimmering": "Отблеск",
+  "enchantment.fabricenchantments.charged_bolt": "Разряд",
+  "enchantment.fabricenchantments.pyromania": "Пиромания",
+  "enchantment.fabricenchantments.replenish": "Посадка",
 
   "enchantment.fabricenchantments.consumer.desc": "Восполняет голод владельцу после убийства цели с некоторым шансом.",
   "enchantment.fabricenchantments.ice_aspect.desc": "Замедляет цель с каждым ударом.",
@@ -37,5 +40,8 @@
   "enchantment.fabricenchantments.pumpkin_head.desc": "Позволяет владельцу смотреть на эндерменов, не провоцируя их.",
   "enchantment.fabricenchantments.god_of_the_sea.desc": "Даёт владельцу подводное дыхание, пока тот держит в руке зачарованный предмет.",
   "enchantment.fabricenchantments.shotgun.desc": "Повышает урон от атак владельца вблизи от цели.",
-  "enchantment.fabricenchantments.glimmering.desc": "Не дает пиглинам атаковать владельца подобно золотой броне."
+  "enchantment.fabricenchantments.glimmering.desc": "Не дает пиглинам атаковать владельца подобно золотой броне.",
+  "enchantment.fabricenchantments.charged_bolt.desc": "При попадании из арбалета вызывает удар молнии с шансом 30%.",
+  "enchantment.fabricenchantments.replenish.desc": "Мгновенно пересаживает собранные мотыгой агрокультуры.",
+  "enchantment.fabricenchantments.pyromania.desc": "Повышает урон владельца по горящим целям."
 }
