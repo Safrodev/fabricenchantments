@@ -6,14 +6,14 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ChargedBoltEnchantment extends Enchantment {
 
     public ChargedBoltEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("charged_bolt")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("charged_bolt")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "charged_bolt"), this);
         }
     }

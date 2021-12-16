@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 @Mixin(LivingEntity.class)
 public class BeheadingMixin {
@@ -41,8 +42,8 @@ public class BeheadingMixin {
 
         if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.BEHEADING, mainHandStack) >= 1)) {
 
-            float HeadChance = 0.05F;
-            float RollRandom = user.getRandom().nextFloat();
+            int HeadChance = FabricEnchantmentsConfig.getIntValue("beheading_chance");
+            float RollRandom = user.getRandom().nextInt(100);
             if (RollRandom <= HeadChance) {
                 if (target instanceof ZombieEntity) {
                     ItemEntity zombiedrop = new ItemEntity(target.world, target.getX(), target.getY(),

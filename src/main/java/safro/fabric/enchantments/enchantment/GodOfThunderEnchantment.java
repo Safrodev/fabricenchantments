@@ -9,14 +9,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class GodOfThunderEnchantment extends Enchantment {
 
     public GodOfThunderEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("god_of_thunder")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("god_of_thunder")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);
         }
     }
@@ -36,9 +36,9 @@ public class GodOfThunderEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        float hitchance = 0.05F;
+        int hitchance = FabricEnchantmentsConfig.getIntValue("god_of_thunder_chance");
 
-        if (user.getRandom().nextFloat() <= hitchance) {
+        if (user.getRandom().nextInt(100) <= hitchance) {
             BlockPos blockPos = target.getBlockPos();
             LightningEntity lightningEntity = (LightningEntity)EntityType.LIGHTNING_BOLT.create(user.getEntityWorld());
             lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos));

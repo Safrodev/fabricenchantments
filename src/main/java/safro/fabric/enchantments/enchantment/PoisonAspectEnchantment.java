@@ -11,13 +11,13 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class PoisonAspectEnchantment extends Enchantment {
     public PoisonAspectEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("poison_aspect")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("poison_aspect")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "poison_aspect"), this);
         }
     }
@@ -40,7 +40,7 @@ public class PoisonAspectEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON,60, 0, true, false));
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON,FabricEnchantmentsConfig.getIntValue("poison_aspect_duration"), 0, true, false));
         }
 
         super.onTargetDamaged(user, target, level);

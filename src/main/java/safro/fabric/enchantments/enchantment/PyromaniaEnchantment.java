@@ -9,13 +9,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class PyromaniaEnchantment extends Enchantment {
     public PyromaniaEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("pyromania")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("pyromania")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "pyromania"), this);
         }
     }
@@ -40,7 +40,7 @@ public class PyromaniaEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity && target.isOnFire()) {
-            target.damage(DamageSource.mob(user), level + 1.0F);
+            target.damage(DamageSource.mob(user), level + 1);
         }
 
         super.onTargetDamaged(user, target, level);

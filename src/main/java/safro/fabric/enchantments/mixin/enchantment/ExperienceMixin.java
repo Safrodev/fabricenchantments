@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 @Mixin(LivingEntity.class)
 public class ExperienceMixin {
@@ -35,7 +36,7 @@ public class ExperienceMixin {
             if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE, mainHandStack) >= 1)) {
                 int level = EnchantmentHelper.getLevel(FabricEnchantments.EXPERIENCE, mainHandStack);
                     if (attackingPlayer != null) {
-                        attackingPlayer.addExperience(level * 4);
+                        attackingPlayer.addExperience(level * FabricEnchantmentsConfig.getIntValue("experience_base_amount"));
                     }
             }
         }

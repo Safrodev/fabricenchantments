@@ -2,7 +2,6 @@ package safro.fabric.enchantments.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -16,13 +15,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class EnderMindEnchantment extends Enchantment {
     public EnderMindEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[] {EquipmentSlot.HEAD});
 
-        if (EnchantmentConfigs.getValue("ender_mind")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("ender_mind")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ender_mind"), this);
         }
     }

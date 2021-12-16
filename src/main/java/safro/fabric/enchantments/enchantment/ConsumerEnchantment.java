@@ -5,14 +5,14 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ConsumerEnchantment extends Enchantment {
 
     public ConsumerEnchantment() {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("consumer")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("consumer")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "consumer"), this);
         }
     }

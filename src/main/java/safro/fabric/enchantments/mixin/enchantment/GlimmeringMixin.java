@@ -15,7 +15,7 @@ public class GlimmeringMixin {
 
     @Inject(method = "wearsGoldArmor", at = @At("HEAD"), cancellable = true)
     private static void hasGlimmering(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (EnchantmentHelper.getLevel(FabricEnchantments.TANK, entity.getEquippedStack(EquipmentSlot.FEET)) >= 1) {
+        if (EnchantmentHelper.getLevel(FabricEnchantments.GLIMMERING, entity.getEquippedStack(EquipmentSlot.FEET)) >= 1) {
             cir.setReturnValue(true);
         }
     }

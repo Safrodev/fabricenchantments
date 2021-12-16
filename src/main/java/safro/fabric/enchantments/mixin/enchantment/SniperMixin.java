@@ -33,16 +33,24 @@ public abstract class SniperMixin extends Entity {
         if (attacker != null) {
             mainHandStack = attacker.getMainHandStack();
         }
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack) >= 1)) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack);
-                double startDamage = persistentProjectileEntity.getDamage();
-                double damageModifier = 0;
-                if (level == 1) damageModifier = 1.3D;
-                if (level == 2) damageModifier = 1.6D;
-                double squareDistanceTo = attacker.distanceTo(target);
-                double distance = Math.sqrt(squareDistanceTo);
-                double distanceTraveledModifier = distance * 0.1;
-                persistentProjectileEntity.setDamage(startDamage * Math.min(distanceTraveledModifier, damageModifier));
+        if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack) >= 1)) {
+            int level = EnchantmentHelper.getLevel(FabricEnchantments.SNIPER, mainHandStack);
+            double startDamage = persistentProjectileEntity.getDamage();
+            double modifier = 1;
+            if (level == 1) {
+                modifier = 1.3D;
+            } else if (level == 2) {
+                modifier = 1.6D;
+            } else if (level > 2) {
+                // In case you got one of those mods that makes the enchantment levels higher
+                modifier = 1.8D;
             }
+            double distance = attacker.squaredDistanceTo(target);
+            if (distance >= 60 && distance <= 100) {
+                persistentProjectileEntity.setDamage(startDamage * modifier);
+            } else if (distance > 100) {
+                persistentProjectileEntity.setDamage(startDamage * modifier + 0.5D);
+            }
+        }
     }
 }

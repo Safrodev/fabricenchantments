@@ -5,14 +5,14 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ExperienceEnchantment extends Enchantment {
 
     public ExperienceEnchantment() {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("experience")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("experience")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "experience"), this);
         }
     }

@@ -6,14 +6,13 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class BeheadingEnchantment extends Enchantment {
     public BeheadingEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("beheading")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("beheading")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "beheading"), this);
         }
     }

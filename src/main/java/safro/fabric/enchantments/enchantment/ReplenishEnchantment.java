@@ -7,13 +7,13 @@ import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ReplenishEnchantment extends Enchantment {
     public ReplenishEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("replenish")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("replenish")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "replenish"), this);
         }
     }

@@ -42,7 +42,7 @@ public abstract class ShotgunMixin extends Entity {
                 double squareDistanceTo = attacker.distanceTo(target);
                 double distance = Math.sqrt(squareDistanceTo);
                 double distanceTraveledModifier = distance * 0.1;
-                if (distance <= 5) {
+                if (attacker.squaredDistanceTo(target) <= 8) {
                     persistentProjectileEntity.setDamage(startDamage * damageModifier);
                 }
             }

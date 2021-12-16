@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 @Mixin(LivingEntity.class)
 public class ConsumerMixin {
@@ -35,8 +36,8 @@ public class ConsumerMixin {
 
             if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack) >= 1 )) {
                 int level = EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack);
-                float EffectChance = 0.1F * level;
-                float ConsumerRandom = user.getRandom().nextFloat();
+                int EffectChance = FabricEnchantmentsConfig.getIntValue("consumer_base_chance") * level;
+                float ConsumerRandom = user.getRandom().nextInt(100);
                 if (ConsumerRandom <= EffectChance) {
                     if (target instanceof LivingEntity){
                         ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 10, 0, true, false));

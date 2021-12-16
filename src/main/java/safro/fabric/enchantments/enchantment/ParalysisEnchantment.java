@@ -11,13 +11,13 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ParalysisEnchantment extends Enchantment {
     public ParalysisEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("paralysis")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("paralysis")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "paralysis"), this);
         }
     }
@@ -40,8 +40,8 @@ public class ParalysisEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 40, 10, true, false));
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 40, 10, true, false));
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, FabricEnchantmentsConfig.getIntValue("paralysis_duration"), 10, true, false));
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, FabricEnchantmentsConfig.getIntValue("paralysis_duration"), 10, true, false));
         }
 
         super.onTargetDamaged(user, target, level);

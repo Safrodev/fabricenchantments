@@ -15,11 +15,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 @Mixin(LivingEntity.class)
 public class SugarRushMixin {
 
-    // messed up the brackets at the bottom but who cares... formatting is for losers
+    // messed up the brackets at the bottom heh
 
     @Shadow @Nullable protected PlayerEntity attackingPlayer;
 
@@ -38,8 +39,8 @@ public class SugarRushMixin {
                 int level = EnchantmentHelper.getLevel(FabricEnchantments.SUGAR_RUSH, mainHandStack);
 
                     if (target instanceof LivingEntity){
-                        ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, true, false));
-                        ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 40, 1, true, false));
+                        ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, FabricEnchantmentsConfig.getIntValue("sugar_rush_duration"), 0, true, false));
+                        ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, FabricEnchantmentsConfig.getIntValue("sugar_rush_duration"), 1, true, false));
                     }
             }
     }

@@ -11,13 +11,13 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class IceAspectEnchantment extends Enchantment {
     public IceAspectEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
-        if (EnchantmentConfigs.getValue("ice_aspect")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("ice_aspect")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ice_aspect"), this);
         }
     }
@@ -40,7 +40,7 @@ public class IceAspectEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3 * level, level - 1, true, false));
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, FabricEnchantmentsConfig.getIntValue("ice_aspect_base_duration") * level, level - 1, true, false));
         }
 
         super.onTargetDamaged(user, target, level);

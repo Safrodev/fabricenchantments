@@ -6,13 +6,6 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.FabricEnchantments;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
 
 public class DisarmEnchantment extends Enchantment {
     public DisarmEnchantment() {

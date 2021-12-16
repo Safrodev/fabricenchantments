@@ -6,7 +6,7 @@ import net.minecraft.enchantment.Enchantment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import safro.fabric.enchantments.config.Config;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 import safro.fabric.enchantments.enchantment.*;
 
 import java.io.File;
@@ -42,7 +42,7 @@ public class FabricEnchantments implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        EnchantmentConfigs.init();
+        FabricEnchantmentsConfig.init();
 
         String defaultConfig =
                 "{\n" +
@@ -52,8 +52,8 @@ public class FabricEnchantments implements ModInitializer {
         File configFile = Config.createFile("config/fabricenchantments/backupconfig.json", defaultConfig, false);
         JsonObject json = Config.getJsonObject(Config.readFile(configFile));
 
-        EnchantmentConfigs.generateConfigs(json == null || !json.has("regen_enchantment_config_file") || json.get("regen_enchantment_config_file").getAsBoolean());
-        EnchantmentConfigs.loadConfig();
+        FabricEnchantmentsConfig.generateConfigs(json == null || !json.has("regen_enchantment_config_file") || json.get("regen_enchantment_config_file").getAsBoolean());
+        FabricEnchantmentsConfig.loadConfig();
 
         AUTO_SMELT = new AutoSmeltEnchantment();
         BEHEADING = new BeheadingEnchantment();

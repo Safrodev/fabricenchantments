@@ -6,13 +6,13 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import safro.fabric.enchantments.config.EnchantmentConfigs;
+import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class GlimmeringEnchantment extends Enchantment {
     public GlimmeringEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[] {EquipmentSlot.FEET});
+        super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
 
-        if (EnchantmentConfigs.getValue("glimmering")) {
+        if (FabricEnchantmentsConfig.getBooleanValue("glimmering")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "glimmering"), this);
         }
     }
