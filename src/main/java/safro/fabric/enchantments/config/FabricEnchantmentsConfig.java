@@ -61,6 +61,7 @@ public class FabricEnchantmentsConfig {
         INT_OPTIONS.put("consumer_base_chance", 10);
         INT_OPTIONS.put("experience_base_amount", 4);
         INT_OPTIONS.put("sugar_rush_duration", 40);
+        INT_OPTIONS.put("shotgun_base_damage", 6);
     }
 
     public static void loadConfig() {
