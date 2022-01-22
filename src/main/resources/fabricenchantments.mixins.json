@@ -14,7 +14,8 @@
     "enchantment.ExperienceMixin",
     "enchantment.GlimmeringMixin",
     "enchantment.ChargedBoltMixin",
-    "enchantment.ReplenishMixin"
+    "enchantment.ReplenishMixin",
+    "enchantment.HomingMixin"
   ],
   "client": [
   ],

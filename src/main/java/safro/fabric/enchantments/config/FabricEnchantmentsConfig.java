@@ -48,6 +48,7 @@ public class FabricEnchantmentsConfig {
         ENCHANTS.put("charged_bolt", true);
         ENCHANTS.put("pyromania", true);
         ENCHANTS.put("replenish", true);
+        ENCHANTS.put("homing", true);
 
         INT_OPTIONS.put("double_swing_chance", 5);
         INT_OPTIONS.put("god_of_thunder_chance", 5);
@@ -62,6 +63,7 @@ public class FabricEnchantmentsConfig {
         INT_OPTIONS.put("experience_base_amount", 4);
         INT_OPTIONS.put("sugar_rush_duration", 40);
         INT_OPTIONS.put("shotgun_base_damage", 6);
+        INT_OPTIONS.put("homing_detection_range", 15);
     }
 
     public static void loadConfig() {

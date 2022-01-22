@@ -21,6 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "Charged Bolt",
   "enchantment.fabricenchantments.pyromania": "Pyromania",
   "enchantment.fabricenchantments.replenish": "Replenish",
+  "enchantment.fabricenchantments.homing": "Homing",
 
   "enchantment.fabricenchantments.consumer.desc": "Upon killing an entity there is a chance that your hunger will be replenished",
   "enchantment.fabricenchantments.ice_aspect.desc": "Slows the target down on each hit",
@@ -43,5 +44,6 @@
   "enchantment.fabricenchantments.glimmering.desc": "Stops piglins from attacking the user like gold armor",
   "enchantment.fabricenchantments.charged_bolt.desc": "A crossbow enchantment that has a 30% to strike the target with lightning",
   "enchantment.fabricenchantments.replenish.desc": "Instantly consumes seeds and replants crops when broken",
-  "enchantment.fabricenchantments.pyromania.desc": "Deals extra damage to entities that are on fire"
+  "enchantment.fabricenchantments.pyromania.desc": "Deals extra damage to entities that are on fire",
+  "enchantment.fabricenchantments.homing.desc": "Projectiles move toward nearby mobs"
 }

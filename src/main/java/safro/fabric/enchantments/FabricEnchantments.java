@@ -38,6 +38,7 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment CHARGED_BOLT;
     public static Enchantment PYROMANIA;
     public static Enchantment REPLENISH;
+    public static Enchantment HOMING;
 
     @Override
     public void onInitialize() {
@@ -77,5 +78,6 @@ public class FabricEnchantments implements ModInitializer {
         CHARGED_BOLT = new ChargedBoltEnchantment();
         PYROMANIA = new PyromaniaEnchantment();
         REPLENISH = new ReplenishEnchantment();
+        HOMING = new HomingEnchantment();
     }
 }
