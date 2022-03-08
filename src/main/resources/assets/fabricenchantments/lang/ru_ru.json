@@ -21,6 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "Разряд",
   "enchantment.fabricenchantments.pyromania": "Пиромания",
   "enchantment.fabricenchantments.replenish": "Посадка",
+  "enchantment.fabricenchantments.homing": "Наведение",
 
   "enchantment.fabricenchantments.consumer.desc": "Восполняет голод владельцу после убийства цели с некоторым шансом.",
   "enchantment.fabricenchantments.ice_aspect.desc": "Замедляет цель с каждым ударом.",
@@ -43,5 +44,6 @@
   "enchantment.fabricenchantments.glimmering.desc": "Не дает пиглинам атаковать владельца подобно золотой броне.",
   "enchantment.fabricenchantments.charged_bolt.desc": "При попадании из арбалета вызывает удар молнии с шансом 30%.",
   "enchantment.fabricenchantments.replenish.desc": "Мгновенно пересаживает собранные мотыгой агрокультуры.",
-  "enchantment.fabricenchantments.pyromania.desc": "Повышает урон владельца по горящим целям."
+  "enchantment.fabricenchantments.pyromania.desc": "Повышает урон владельца по горящим целям.",
+  "enchantment.fabricenchantments.homing.desc": "Позволяет выпущенным снарядам самонаводиться на ближайшие цели."
 }
