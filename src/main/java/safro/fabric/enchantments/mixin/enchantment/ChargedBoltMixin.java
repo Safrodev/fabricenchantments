@@ -1,6 +1,5 @@
 package safro.fabric.enchantments.mixin.enchantment;
 
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;
@@ -15,18 +14,18 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
+import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(PersistentProjectileEntity.class)
 public abstract class ChargedBoltMixin {
-
-    @Shadow protected abstract void initDataTracker();
 
     @Inject(method = "onEntityHit", at = @At("TAIL"))
     private void chargedBoltHit(EntityHitResult entityHitResult, CallbackInfo ci) {
         PersistentProjectileEntity entity = (PersistentProjectileEntity) (Object) this;
         LivingEntity attacker = (LivingEntity) entity.getOwner();
+
         if (entityHitResult.getEntity() instanceof LivingEntity target && attacker != null) {
-            if (EnchantmentHelper.getLevel(FabricEnchantments.CHARGED_BOLT, attacker.getMainHandStack()) >= 1) {
+            if (FEUtil.hasEnchantment(attacker, FabricEnchantments.CHARGED_BOLT)) {
                 if (attacker.getRandom().nextInt(100) <= FabricEnchantmentsConfig.getIntValue("charged_bolt_chance")) {
                     BlockPos blockPos = target.getBlockPos();
                     LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(attacker.getEntityWorld());

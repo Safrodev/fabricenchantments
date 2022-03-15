@@ -1,6 +1,5 @@
 package safro.fabric.enchantments.mixin.enchantment;
 
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
@@ -11,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
+import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(PersistentProjectileEntity.class)
 public class HomingMixin {
@@ -18,7 +18,7 @@ public class HomingMixin {
     @Inject(method = "tick", at = @At("TAIL"))
     private void tickHoming(CallbackInfo ci) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity) (Object) this;
-        if (projectile.getOwner() instanceof LivingEntity owner && EnchantmentHelper.getLevel(FabricEnchantments.HOMING, owner.getMainHandStack()) >= 1) {
+        if (projectile.getOwner() instanceof LivingEntity owner && FEUtil.hasEnchantment(owner, FabricEnchantments.HOMING)) {
             if (projectile.isAlive() && !projectile.isOnGround()) {
                 Box box = projectile.getBoundingBox().expand(FabricEnchantmentsConfig.getIntValue("homing_detection_range"));
                 LivingEntity target = projectile.world.getClosestEntity(LivingEntity.class, TargetPredicate.DEFAULT, null, projectile.getX(), projectile.getY(), projectile.getZ(), box);

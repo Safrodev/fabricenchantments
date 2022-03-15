@@ -1,48 +1,36 @@
 package safro.fabric.enchantments.mixin.enchantment;
 
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
+import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(LivingEntity.class)
 public class ConsumerMixin {
 
-    @Shadow @Nullable protected PlayerEntity attackingPlayer;
-
     @Inject(at = @At("HEAD"), method = "onDeath", cancellable = true)
-
-    public void ConsumerKill(DamageSource source, CallbackInfo callbackInfo) {
+    public void consumerKill(DamageSource source, CallbackInfo callbackInfo) {
         if(!(source.getAttacker() instanceof PlayerEntity)) return;
         LivingEntity user = (LivingEntity) source.getAttacker();
         LivingEntity target = (LivingEntity) (Object) this;
-        ItemStack mainHandStack = null;
-        if (user != null) {
-            mainHandStack = user.getMainHandStack();
-        }
 
-            if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack) >= 1 )) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.CONSUMER, mainHandStack);
-                int EffectChance = FabricEnchantmentsConfig.getIntValue("consumer_base_chance") * level;
-                float ConsumerRandom = user.getRandom().nextInt(100);
-                if (ConsumerRandom <= EffectChance) {
-                    if (target instanceof LivingEntity){
-                        ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 10, 0, true, false));
-                    }
+        if (user != null && FEUtil.hasEnchantment(user, FabricEnchantments.CONSUMER)) {
+            int level = FEUtil.getLevel(user, FabricEnchantments.CONSUMER);
+            int chance = FabricEnchantmentsConfig.getIntValue("consumer_base_chance") * level;
+            if (user.getRandom().nextInt(100) <= chance) {
+                if (target instanceof LivingEntity){
+                    ((LivingEntity) source.getAttacker()).addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 10, 0, true, false));
                 }
             }
+        }
     }
 }

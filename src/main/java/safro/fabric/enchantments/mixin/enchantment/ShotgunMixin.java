@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
+import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(PersistentProjectileEntity.class)
 public abstract class ShotgunMixin extends Entity {
@@ -26,17 +27,15 @@ public abstract class ShotgunMixin extends Entity {
     private void shotgunHit(EntityHitResult entityHitResult, CallbackInfo ci) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity) (Object) this;
         if (entityHitResult.getEntity() instanceof LivingEntity target && projectile.getOwner() instanceof LivingEntity attacker) {
-            if (attacker.getMainHandStack() != null) {
-                int level = EnchantmentHelper.getLevel(FabricEnchantments.SHOTGUN, attacker.getMainHandStack());
-                if (level >= 1) {
-                    float distance = attacker.distanceTo(target);
-                    int damage = FabricEnchantmentsConfig.getIntValue("shotgun_base_damage") + (level * 2);
-                    if (distance <= 5.0F) {
-                        target.damage(DamageSource.mobProjectile(projectile, attacker), damage);
-                    } else if (distance <= 10.0F) {
-                        int damage1 = FabricEnchantmentsConfig.getIntValue("shotgun_base_damage") + (level);
-                        target.damage(DamageSource.mobProjectile(projectile, attacker), damage1);
-                    }
+            if (FEUtil.hasEnchantment(attacker, FabricEnchantments.SHOTGUN)) {
+                int level = FEUtil.getLevel(attacker, FabricEnchantments.SHOTGUN);
+                float distance = attacker.distanceTo(target);
+                int damage = FabricEnchantmentsConfig.getIntValue("shotgun_base_damage") + (level * 2);
+                if (distance <= 5.0F) {
+                    target.damage(DamageSource.mobProjectile(projectile, attacker), damage);
+                } else if (distance <= 10.0F) {
+                    int damage1 = FabricEnchantmentsConfig.getIntValue("shotgun_base_damage") + (level);
+                    target.damage(DamageSource.mobProjectile(projectile, attacker), damage1);
                 }
             }
         }

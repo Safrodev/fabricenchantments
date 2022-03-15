@@ -1,50 +1,35 @@
 package safro.fabric.enchantments.mixin.enchantment;
 
 
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
+import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(LivingEntity.class)
 public class BeheadingMixin {
 
-    @Shadow
-    @Nullable
-    protected PlayerEntity attackingPlayer;
-
     @Inject(at = @At("HEAD"), method = "onDeath", cancellable = true)
-
-    public void BeheadingKill(DamageSource source, CallbackInfo callbackInfo) {
+    public void beheadingKill(DamageSource source, CallbackInfo callbackInfo) {
         if (!(source.getAttacker() instanceof PlayerEntity)) return;
         LivingEntity user = (LivingEntity) source.getAttacker();
         LivingEntity target = (LivingEntity) (Object) this;
-        ItemStack mainHandStack = null;
-        if (user != null) {
-            mainHandStack = user.getMainHandStack();
-        }
 
-        if (mainHandStack != null && (EnchantmentHelper.getLevel(FabricEnchantments.BEHEADING, mainHandStack) >= 1)) {
-
-            int HeadChance = FabricEnchantmentsConfig.getIntValue("beheading_chance");
-            float RollRandom = user.getRandom().nextInt(100);
-            if (RollRandom <= HeadChance) {
+        if (user != null && FEUtil.hasEnchantment(user, FabricEnchantments.BEHEADING)) {
+            int chance = FabricEnchantmentsConfig.getIntValue("beheading_chance");
+            if (user.getRandom().nextInt(100) <= chance) {
                 if (target instanceof ZombieEntity) {
                     ItemEntity zombiedrop = new ItemEntity(target.world, target.getX(), target.getY(),
                             target.getZ(),
