@@ -15,7 +15,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ParalysisEnchantment extends Enchantment {
     public ParalysisEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("paralysis")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "paralysis"), this);

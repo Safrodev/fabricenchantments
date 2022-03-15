@@ -39,10 +39,9 @@ public class PoisonAspectEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON,FabricEnchantmentsConfig.getIntValue("poison_aspect_duration"), 0, true, false));
+        if(target instanceof LivingEntity e) {
+            e.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, FabricEnchantmentsConfig.getIntValue("poison_aspect_duration"), 0, true, false));
         }
-
         super.onTargetDamaged(user, target, level);
     }
 }

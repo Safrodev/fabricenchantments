@@ -10,7 +10,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class ExperienceEnchantment extends Enchantment {
 
     public ExperienceEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("experience")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "experience"), this);

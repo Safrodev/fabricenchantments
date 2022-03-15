@@ -11,7 +11,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ReplenishEnchantment extends Enchantment {
     public ReplenishEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("replenish")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "replenish"), this);

@@ -14,7 +14,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class RiseEnchantment extends Enchantment {
     public RiseEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.BOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("rise")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "rise"), this);
@@ -39,7 +39,6 @@ public class RiseEnchantment extends Enchantment {
         if(target instanceof LivingEntity) {
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, FabricEnchantmentsConfig.getIntValue("rise_base_duration") * level, level - 1, true, false));
         }
-
         super.onTargetDamaged(user, target, level);
     }
 

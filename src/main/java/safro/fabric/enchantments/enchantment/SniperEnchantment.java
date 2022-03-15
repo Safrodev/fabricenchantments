@@ -11,7 +11,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class SniperEnchantment extends Enchantment {
 
     public SniperEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("sniper")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "sniper"), this);

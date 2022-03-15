@@ -18,7 +18,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class DoubleSwingEnchantment extends Enchantment {
 
     public DoubleSwingEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("double_swing")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);

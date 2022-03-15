@@ -15,7 +15,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class IceAspectEnchantment extends Enchantment {
     public IceAspectEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("ice_aspect")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ice_aspect"), this);

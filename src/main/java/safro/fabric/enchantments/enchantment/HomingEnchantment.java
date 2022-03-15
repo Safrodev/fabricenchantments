@@ -11,7 +11,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class HomingEnchantment extends Enchantment {
 
     public HomingEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("homing")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "homing"), this);

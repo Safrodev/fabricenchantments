@@ -10,7 +10,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class BeheadingEnchantment extends Enchantment {
     public BeheadingEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("beheading")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "beheading"), this);

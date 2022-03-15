@@ -14,7 +14,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class GodOfThunderEnchantment extends Enchantment {
 
     public GodOfThunderEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("god_of_thunder")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);

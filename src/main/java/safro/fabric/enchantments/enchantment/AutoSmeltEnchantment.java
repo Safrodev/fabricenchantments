@@ -10,7 +10,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class AutoSmeltEnchantment extends Enchantment {
 
     public AutoSmeltEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("auto_smelt")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "auto_smelt"), this);

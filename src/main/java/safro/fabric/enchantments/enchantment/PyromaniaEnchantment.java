@@ -13,7 +13,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class PyromaniaEnchantment extends Enchantment {
     public PyromaniaEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("pyromania")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "pyromania"), this);

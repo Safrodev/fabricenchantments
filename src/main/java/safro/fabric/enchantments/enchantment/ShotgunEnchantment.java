@@ -11,7 +11,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class ShotgunEnchantment extends Enchantment {
 
     public ShotgunEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("shotgun")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "shotgun"), this);

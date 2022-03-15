@@ -11,7 +11,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class ChargedBoltEnchantment extends Enchantment {
 
     public ChargedBoltEnchantment() {
-        super(Rarity.UNCOMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("charged_bolt")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "charged_bolt"), this);

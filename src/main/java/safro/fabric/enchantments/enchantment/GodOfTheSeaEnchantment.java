@@ -10,7 +10,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class GodOfTheSeaEnchantment extends Enchantment {
 
     public GodOfTheSeaEnchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.TRIDENT, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.TRIDENT, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("god_of_the_sea")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_the_sea"), this);

@@ -10,7 +10,7 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 public class ConsumerEnchantment extends Enchantment {
 
     public ConsumerEnchantment() {
-        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+        super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("consumer")) {
             Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "consumer"), this);
