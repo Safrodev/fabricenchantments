@@ -15,10 +15,9 @@ import safro.fabric.enchantments.util.FEUtil;
 @Mixin(LivingEntity.class)
 public class GodOfTheSeaMixin {
 
-    @Inject(at = @At("HEAD"), method = "baseTick", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "baseTick")
     public void godOfTheSea(CallbackInfo ci) {
         LivingEntity user = (LivingEntity) (Object) this;
-
         if (FEUtil.hasEnchantment(user, FabricEnchantments.GOD_OF_THE_SEA)) {
             if (user.isSubmergedIn(FluidTags.WATER) && !user.getEntityWorld().getBlockState(new BlockPos(user.getX(), user.getEyeY(), user.getZ())).isOf(Blocks.BUBBLE_COLUMN)) {
                 if (!user.canBreatheInWater() && !((PlayerEntity) user).getAbilities().invulnerable) {
