@@ -39,16 +39,14 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment PYROMANIA;
     public static Enchantment REPLENISH;
     public static Enchantment HOMING;
+    public static Enchantment PULSE;
 
     @Override
     public void onInitialize() {
 
         FabricEnchantmentsConfig.init();
 
-        String defaultConfig =
-                "{\n" +
-                        "  \"regen_enchantment_config_file\": false\n" +
-                        "}";
+        String defaultConfig = "{\n" + "  \"regen_enchantment_config_file\": false\n" + "}";
 
         File configFile = Config.createFile("config/fabricenchantments/backupconfig.json", defaultConfig, false);
         JsonObject json = Config.getJsonObject(Config.readFile(configFile));
@@ -79,5 +77,6 @@ public class FabricEnchantments implements ModInitializer {
         PYROMANIA = new PyromaniaEnchantment();
         REPLENISH = new ReplenishEnchantment();
         HOMING = new HomingEnchantment();
+        PULSE = new PulseEnchantment();
     }
 }

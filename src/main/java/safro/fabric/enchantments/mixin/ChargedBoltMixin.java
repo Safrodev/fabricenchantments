@@ -1,4 +1,4 @@
-package safro.fabric.enchantments.mixin.enchantment;
+package safro.fabric.enchantments.mixin;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;

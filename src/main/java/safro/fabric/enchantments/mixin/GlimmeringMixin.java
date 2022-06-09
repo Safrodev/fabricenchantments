@@ -1,4 +1,4 @@
-package safro.fabric.enchantments.mixin.enchantment;
+package safro.fabric.enchantments.mixin;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;

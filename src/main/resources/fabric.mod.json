@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fabricenchantments",
-  "version": "0.7.2",
+  "version": "${version}",
 
   "name": "Fabric Enchantments",
   "description": "An enchantment overhual mod for Fabric",
@@ -28,13 +28,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.14.7",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.19.x",
     "java": ">=17"
-  },
-  "suggests": {
-      "modmenu": "*"
   },
   "accessWidener": "fabricenchantments.accesswidener"
 }
