@@ -2,7 +2,7 @@
   "enchantment.fabricenchantments.consumer": "흡수",
   "enchantment.fabricenchantments.ice_aspect": "냉기",
   "enchantment.fabricenchantments.poison_aspect": "중독",
-  "enchantment.fabricenchantments.rise": "상승",
+  "enchantment.fabricenchantments.rise": "공중부양",
   "enchantment.fabricenchantments.nocturnal": "녹터널",
   "enchantment.fabricenchantments.tank": "전차",
   "enchantment.fabricenchantments.ender_mind": "엔더 마인드",
@@ -21,6 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "차지 볼트",
   "enchantment.fabricenchantments.pyromania": "방화광",
   "enchantment.fabricenchantments.replenish": "재생",
+  "enchantment.fabricenchantments.homing": "자동 유도",
 
   "enchantment.fabricenchantments.consumer.desc": "생물을 죽이면 배고픔이 일정 확률로 채워집니다.",
   "enchantment.fabricenchantments.ice_aspect.desc": "때릴 때마다 상대를 느리게 만듭니다.",
@@ -44,4 +45,5 @@
   "enchantment.fabricenchantments.charged_bolt.desc": "30% 확률로 대상을 번개로 내려칩니다.",
   "enchantment.fabricenchantments.replenish.desc": "씨앗을 즉시 사용하고 부서졌을 경우 농작물을 심습니다."
   "enchantment.fabricenchantments.pyromania.desc": "불 타고 있는 생물에게 추가 데미지를 입힙니다."
+  "enchantment.fabricenchantments.homing.desc": "투사체가 주변 몬스터를 향해 날아갑니다."
 }
