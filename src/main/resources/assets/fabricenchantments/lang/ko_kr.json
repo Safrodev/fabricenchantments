@@ -22,6 +22,7 @@
   "enchantment.fabricenchantments.pyromania": "방화광",
   "enchantment.fabricenchantments.replenish": "재생",
   "enchantment.fabricenchantments.homing": "자동 유도",
+  "enchantment.fabricenchantments.pulse": "펄스",
 
   "enchantment.fabricenchantments.consumer.desc": "생물을 죽이면 배고픔이 일정 확률로 채워집니다.",
   "enchantment.fabricenchantments.ice_aspect.desc": "때릴 때마다 상대를 느리게 만듭니다.",
@@ -43,7 +44,8 @@
   "enchantment.fabricenchantments.shotgun.desc": "대상과 가까울 수록 대상에게 주는 데미지가 증가합니다.",
   "enchantment.fabricenchantments.glimmering.desc": "금 방어구를 입었을 때처럼 피글린이 공격하지 않습니다.",
   "enchantment.fabricenchantments.charged_bolt.desc": "30% 확률로 대상을 번개로 내려칩니다.",
-  "enchantment.fabricenchantments.replenish.desc": "씨앗을 즉시 사용하고 부서졌을 경우 농작물을 심습니다."
-  "enchantment.fabricenchantments.pyromania.desc": "불 타고 있는 생물에게 추가 데미지를 입힙니다."
-  "enchantment.fabricenchantments.homing.desc": "투사체가 주변 몬스터를 향해 날아갑니다."
+  "enchantment.fabricenchantments.replenish.desc": "농작물을 수확하면 씨앗을 그 자리에 다시 심습니다.",
+  "enchantment.fabricenchantments.pyromania.desc": "불 타고 있는 생물에게 추가 데미지를 입힙니다.",
+  "enchantment.fabricenchantments.homing.desc": "투사체가 주변 몬스터를 향해 날아갑니다.",
+  "enchantment.fabricenchantments.pulse.desc": "가장 가까운 적을 대상으로 소닉 붐을 발사합니다."
 }
