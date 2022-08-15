@@ -15,7 +15,7 @@
     "GlimmeringMixin",
     "ChargedBoltMixin",
     "ReplenishMixin",
-    "HomingMixin",
+    "SoulSeekerMixin",
     "PulseMixin"
   ],
   "client": [

@@ -21,7 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "Charged Bolt",
   "enchantment.fabricenchantments.pyromania": "Pyromania",
   "enchantment.fabricenchantments.replenish": "Replenish",
-  "enchantment.fabricenchantments.homing": "Homing",
+  "enchantment.fabricenchantments.soul_seeker": "Soul Seeker",
   "enchantment.fabricenchantments.pulse": "Pulse",
 
   "enchantment.fabricenchantments.consumer.desc": "Upon killing an entity there is a chance that your hunger will be replenished",
@@ -46,6 +46,6 @@
   "enchantment.fabricenchantments.charged_bolt.desc": "A crossbow enchantment that has a 30% to strike the target with lightning",
   "enchantment.fabricenchantments.replenish.desc": "Instantly consumes seeds and replants crops when broken",
   "enchantment.fabricenchantments.pyromania.desc": "Deals extra damage to entities that are on fire",
-  "enchantment.fabricenchantments.homing.desc": "Projectiles move toward nearby mobs",
+  "enchantment.fabricenchantments.soul_seeker.desc": "Projectiles home towards nearby mobs",
   "enchantment.fabricenchantments.pulse.desc": "Fires a sonic boom that targets the nearest enemy"
 }

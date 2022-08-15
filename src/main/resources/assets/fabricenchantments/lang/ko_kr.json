@@ -21,7 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "차지 볼트",
   "enchantment.fabricenchantments.pyromania": "방화광",
   "enchantment.fabricenchantments.replenish": "재생",
-  "enchantment.fabricenchantments.homing": "자동 유도",
+  "enchantment.fabricenchantments.soul_seeker": "자동 유도",
   "enchantment.fabricenchantments.pulse": "펄스",
 
   "enchantment.fabricenchantments.consumer.desc": "생물을 죽이면 배고픔이 일정 확률로 채워집니다.",
@@ -46,6 +46,6 @@
   "enchantment.fabricenchantments.charged_bolt.desc": "30% 확률로 대상을 번개로 내려칩니다.",
   "enchantment.fabricenchantments.replenish.desc": "농작물을 수확하면 씨앗을 그 자리에 다시 심습니다.",
   "enchantment.fabricenchantments.pyromania.desc": "불 타고 있는 생물에게 추가 데미지를 입힙니다.",
-  "enchantment.fabricenchantments.homing.desc": "투사체가 주변 몬스터를 향해 날아갑니다.",
+  "enchantment.fabricenchantments.soul_seeker.desc": "투사체가 주변 몬스터를 향해 날아갑니다.",
   "enchantment.fabricenchantments.pulse.desc": "가장 가까운 적을 대상으로 소닉 붐을 발사합니다."
 }

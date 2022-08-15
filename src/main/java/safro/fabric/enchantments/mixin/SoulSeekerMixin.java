@@ -13,14 +13,14 @@ import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 import safro.fabric.enchantments.util.FEUtil;
 
 @Mixin(PersistentProjectileEntity.class)
-public class HomingMixin {
+public class SoulSeekerMixin {
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void tickHoming(CallbackInfo ci) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity) (Object) this;
-        if (projectile.getOwner() instanceof LivingEntity owner && FEUtil.hasEnchantment(owner, FabricEnchantments.HOMING)) {
+        if (projectile.getOwner() instanceof LivingEntity owner && FEUtil.hasEnchantment(owner, FabricEnchantments.SOUL_SEEKER)) {
             if (projectile.isAlive() && !projectile.isOnGround()) {
-                Box box = projectile.getBoundingBox().expand(FabricEnchantmentsConfig.getIntValue("homing_detection_range"));
+                Box box = projectile.getBoundingBox().expand(FabricEnchantmentsConfig.getIntValue("soul_seeker_detection_range"));
                 LivingEntity target = projectile.world.getClosestEntity(LivingEntity.class, TargetPredicate.DEFAULT, null, projectile.getX(), projectile.getY(), projectile.getZ(), box);
                 if (target != null && target.isAlive() && !target.isSpectator() && !(target == owner)) {
                     if (projectile.age >= 5) {

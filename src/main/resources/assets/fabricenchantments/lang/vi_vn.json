@@ -21,7 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "Charged Bolt",
   "enchantment.fabricenchantments.pyromania": "Pyromania",
   "enchantment.fabricenchantments.replenish": "Replenish",
-  "enchantment.fabricenchantments.homing": "Homing",
+  "enchantment.fabricenchantments.soul_seeker": "soul_seeker",
   "enchantment.fabricenchantments.pulse": "Pulse",
 
   "enchantment.fabricenchantments.consumer.desc": "Khi giết một thực thể, có khả năng cơn đói của bạn sẽ được phục hồi",
@@ -46,6 +46,6 @@
   "enchantment.fabricenchantments.charged_bolt.desc": "Một bùa lợi nỏ có 30% để tấn công mục tiêu bằng tia sét",
   "enchantment.fabricenchantments.replenish.desc": "Tiêu thụ ngay lập tức hạt giống và trồng lại cây trồng khi bị hỏng",
   "enchantment.fabricenchantments.pyromania.desc": "Gây thêm sát thương cho các thực thể đang bốc cháy",
-  "enchantment.fabricenchantments.homing.desc": "Đạn di chuyển về phía mob gần đó",
+  "enchantment.fabricenchantments.soul_seeker.desc": "Đạn di chuyển về phía mob gần đó",
   "enchantment.fabricenchantments.pulse.desc": "Bắn một vụ nổ âm thanh nhằm vào kẻ thù gần nhất"
 }

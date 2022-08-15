@@ -21,7 +21,7 @@
   "enchantment.fabricenchantments.charged_bolt": "Разряд",
   "enchantment.fabricenchantments.pyromania": "Пиромания",
   "enchantment.fabricenchantments.replenish": "Посадка",
-  "enchantment.fabricenchantments.homing": "Наведение",
+  "enchantment.fabricenchantments.soul_seeker": "Наведение",
   "enchantment.fabricenchantments.pulse": "Импульс",
 
   "enchantment.fabricenchantments.consumer.desc": "Восполняет голод владельцу после убийства цели с некоторым шансом.",
@@ -46,6 +46,6 @@
   "enchantment.fabricenchantments.charged_bolt.desc": "При попадании из арбалета вызывает удар молнии с шансом 30%.",
   "enchantment.fabricenchantments.replenish.desc": "Мгновенно пересаживает собранные мотыгой агрокультуры.",
   "enchantment.fabricenchantments.pyromania.desc": "Повышает урон владельца по горящим целям.",
-  "enchantment.fabricenchantments.homing.desc": "Позволяет выпущенным снарядам самонаводиться на ближайшие цели.",
-  "enchantment.fabricenchantments.homing.desc": "Вызывает звуковой удар в сторону ближайшей цели."
+  "enchantment.fabricenchantments.soul_seeker.desc": "Позволяет выпущенным снарядам самонаводиться на ближайшие цели.",
+  "enchantment.fabricenchantments.soul_seeker.desc": "Вызывает звуковой удар в сторону ближайшей цели."
 }

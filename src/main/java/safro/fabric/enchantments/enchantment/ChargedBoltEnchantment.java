@@ -26,6 +26,6 @@ public class ChargedBoltEnchantment extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != Enchantments.QUICK_CHARGE;
+        return super.canAccept(other) && other != Enchantments.QUICK_CHARGE && other != Enchantments.MULTISHOT;
     }
 }

@@ -8,8 +8,10 @@ import org.apache.logging.log4j.Logger;
 import safro.fabric.enchantments.config.Config;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 import safro.fabric.enchantments.enchantment.*;
+import safro.fabric.enchantments.event.FEEvents;
 
 import java.io.File;
+import java.util.UUID;
 
 
 public class FabricEnchantments implements ModInitializer {
@@ -38,21 +40,19 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment CHARGED_BOLT;
     public static Enchantment PYROMANIA;
     public static Enchantment REPLENISH;
-    public static Enchantment HOMING;
+    public static Enchantment SOUL_SEEKER;
     public static Enchantment PULSE;
 
     @Override
     public void onInitialize() {
-
         FabricEnchantmentsConfig.init();
-
         String defaultConfig = "{\n" + "  \"regen_enchantment_config_file\": false\n" + "}";
-
         File configFile = Config.createFile("config/fabricenchantments/backupconfig.json", defaultConfig, false);
         JsonObject json = Config.getJsonObject(Config.readFile(configFile));
-
         FabricEnchantmentsConfig.generateConfigs(json == null || !json.has("regen_enchantment_config_file") || json.get("regen_enchantment_config_file").getAsBoolean());
         FabricEnchantmentsConfig.loadConfig();
+
+        FEEvents.init();
 
         AUTO_SMELT = new AutoSmeltEnchantment();
         BEHEADING = new BeheadingEnchantment();
@@ -76,7 +76,9 @@ public class FabricEnchantments implements ModInitializer {
         CHARGED_BOLT = new ChargedBoltEnchantment();
         PYROMANIA = new PyromaniaEnchantment();
         REPLENISH = new ReplenishEnchantment();
-        HOMING = new HomingEnchantment();
+        SOUL_SEEKER = new SoulSeekerEnchantment();
         PULSE = new PulseEnchantment();
+
+        System.out.println(UUID.randomUUID());
     }
 }

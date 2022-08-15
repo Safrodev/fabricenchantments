@@ -21,9 +21,8 @@ public class SugarRushMixin {
     public void sugarRushKill(DamageSource source, CallbackInfo callbackInfo) {
         if(!(source.getAttacker() instanceof PlayerEntity)) return;
         LivingEntity user = (LivingEntity) source.getAttacker();
-        LivingEntity target = (LivingEntity) (Object) this;
 
-        if (user != null && FEUtil.hasEnchantment(user, FabricEnchantments.SUGAR_RUSH)) {
+        if (user != null && FEUtil.getLevelArmor(user, FabricEnchantments.SUGAR_RUSH) > 0) {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, FabricEnchantmentsConfig.getIntValue("sugar_rush_duration"), 0, true, false));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, FabricEnchantmentsConfig.getIntValue("sugar_rush_duration"), 1, true, false));
         }

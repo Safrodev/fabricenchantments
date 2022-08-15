@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Fabric Enchantments",
-  "description": "An enchantment overhual mod for Fabric",
+  "description": "An enchantment overhaul mod for Fabric",
   "authors": [
     "Safro"
   ],
@@ -28,7 +28,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.7",
+    "fabricloader": ">=0.14.9",
     "fabric": "*",
     "minecraft": "1.19.x",
     "java": ">=17"
