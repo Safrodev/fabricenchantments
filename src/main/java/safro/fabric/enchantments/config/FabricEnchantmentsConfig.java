@@ -50,6 +50,7 @@ public class FabricEnchantmentsConfig {
         ENCHANTS.put("replenish", true);
         ENCHANTS.put("soul_seeker", true);
         ENCHANTS.put("pulse", true);
+        ENCHANTS.put("bewitching", true);
 
         INT_OPTIONS.put("double_swing_chance", 5);
         INT_OPTIONS.put("god_of_thunder_chance", 5);

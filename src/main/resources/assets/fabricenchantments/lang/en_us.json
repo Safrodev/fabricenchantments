@@ -23,13 +23,14 @@
   "enchantment.fabricenchantments.replenish": "Replenish",
   "enchantment.fabricenchantments.soul_seeker": "Soul Seeker",
   "enchantment.fabricenchantments.pulse": "Pulse",
+  "enchantment.fabricenchantments.bewitching": "Bewitching",
 
   "enchantment.fabricenchantments.consumer.desc": "Upon killing an entity there is a chance that your hunger will be replenished",
   "enchantment.fabricenchantments.ice_aspect.desc": "Slows the target down on each hit",
   "enchantment.fabricenchantments.poison_aspect.desc": "Poisons the target on each hit",
   "enchantment.fabricenchantments.rise.desc": "Upon being hit, the target floats up in the air for a short duration",
   "enchantment.fabricenchantments.nocturnal.desc": "When the user is hit in the night they become invisible for a short duration",
-  "enchantment.fabricenchantments.tank.desc": "Grants the user protection from unblockable and armor bypassing damage",
+  "enchantment.fabricenchantments.tank.desc": "Grants the user 1.5 extra hearts per level",
   "enchantment.fabricenchantments.ender_mind.desc": "When the user is hit and is below 4 hearts, they get teleported away a short distance",
   "enchantment.fabricenchantments.sugar_rush.desc": "Upon killing an entity the wearer becomes fast and has increased jump height",
   "enchantment.fabricenchantments.experience.desc": "Grants the user more experience when killing entities",
@@ -47,5 +48,6 @@
   "enchantment.fabricenchantments.replenish.desc": "Instantly consumes seeds and replants crops when broken",
   "enchantment.fabricenchantments.pyromania.desc": "Deals extra damage to entities that are on fire",
   "enchantment.fabricenchantments.soul_seeker.desc": "Projectiles home towards nearby mobs",
-  "enchantment.fabricenchantments.pulse.desc": "Fires a sonic boom that targets the nearest enemy"
+  "enchantment.fabricenchantments.pulse.desc": "Fires a sonic boom that targets the nearest enemy",
+  "enchantment.fabricenchantments.bewitching.desc": "Automatically applies certain potions from your inventory when in a sticky situation"
 }

@@ -16,7 +16,9 @@
     "ChargedBoltMixin",
     "ReplenishMixin",
     "SoulSeekerMixin",
-    "PulseMixin"
+    "PulseMixin",
+    "BewitchingMixin",
+    "TankMixin"
   ],
   "client": [
   ],

@@ -23,31 +23,25 @@ import java.util.Optional;
 
 @Mixin(Block.class)
 public class AutoSmeltMixin {
-    @Inject(
-            method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;",
-            at = @At("RETURN"),
-            cancellable = true)
+
+    @Inject(method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;", at = @At("RETURN"), cancellable = true)
     private static void getDroppedStacks(BlockState state, ServerWorld world, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack stack, CallbackInfoReturnable<List<ItemStack>> cir) {
         List<ItemStack> items = new ArrayList<>();
         List<ItemStack> returnValue = cir.getReturnValue();
-        if (EnchantmentHelper.getLevel(FabricEnchantments.AUTO_SMELT, stack) == 0) {
-            cir.setReturnValue(returnValue);
-            return;
-        }
-        for (ItemStack itemStack : returnValue) {
-            Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((smeltingRecipe -> {
-                return smeltingRecipe.getIngredients().get(0).test(itemStack);
-            })).findFirst();
-            if (recipe.isPresent()) {
-                ItemStack smelted = recipe.get().getOutput();
-                smelted.setCount(itemStack.getCount());
-                items.add(smelted);
-            } else {
-                items.add(itemStack);
+        if (EnchantmentHelper.getLevel(FabricEnchantments.AUTO_SMELT, stack) > 0) {
+            for (ItemStack itemStack : returnValue) {
+                Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((smeltingRecipe -> {
+                    return smeltingRecipe.getIngredients().get(0).test(itemStack);
+                })).findFirst();
+                if (recipe.isPresent()) {
+                    ItemStack smelted = recipe.get().getOutput();
+                    smelted.setCount(itemStack.getCount());
+                    items.add(smelted);
+                } else {
+                    items.add(itemStack);
+                }
             }
-
-
+            cir.setReturnValue(items);
         }
-        cir.setReturnValue(items);
     }
 }

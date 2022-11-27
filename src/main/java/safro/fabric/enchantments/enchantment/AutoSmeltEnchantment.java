@@ -18,8 +18,12 @@ public class AutoSmeltEnchantment extends Enchantment {
     }
 
     @Override
-    public int getMinPower(int level) { return 12; }
+    public int getMinPower(int level) {
+        return 12;
+    }
 
     @Override
-    public int getMaxLevel() { return 1; }
+    public int getMaxLevel() {
+        return 1;
+    }
 }

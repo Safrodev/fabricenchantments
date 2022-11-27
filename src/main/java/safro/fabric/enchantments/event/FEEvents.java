@@ -15,7 +15,7 @@ public class FEEvents {
                 int i = EnchantmentHelper.getLevel(FabricEnchantments.TANK, stack);
                 if (i > 0) {
                     EntityAttributeModifier modifier = new EntityAttributeModifier("5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 1.5D * i, EntityAttributeModifier.Operation.ADDITION);
-                    stack.addAttributeModifier(EntityAttributes.GENERIC_MAX_HEALTH, modifier, slot);
+                    attributeModifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, modifier);
                 }
             }
         });

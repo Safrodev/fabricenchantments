@@ -16,7 +16,7 @@ import safro.fabric.enchantments.util.FEUtil;
 public class SoulSeekerMixin {
 
     @Inject(method = "tick", at = @At("TAIL"))
-    private void tickHoming(CallbackInfo ci) {
+    private void tickSoulSeeker(CallbackInfo ci) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity) (Object) this;
         if (projectile.getOwner() instanceof LivingEntity owner && FEUtil.hasEnchantment(owner, FabricEnchantments.SOUL_SEEKER)) {
             if (projectile.isAlive() && !projectile.isOnGround()) {

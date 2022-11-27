@@ -11,7 +11,6 @@ import safro.fabric.enchantments.enchantment.*;
 import safro.fabric.enchantments.event.FEEvents;
 
 import java.io.File;
-import java.util.UUID;
 
 
 public class FabricEnchantments implements ModInitializer {
@@ -42,6 +41,7 @@ public class FabricEnchantments implements ModInitializer {
     public static Enchantment REPLENISH;
     public static Enchantment SOUL_SEEKER;
     public static Enchantment PULSE;
+    public static Enchantment BEWITCHING;
 
     @Override
     public void onInitialize() {
@@ -51,8 +51,6 @@ public class FabricEnchantments implements ModInitializer {
         JsonObject json = Config.getJsonObject(Config.readFile(configFile));
         FabricEnchantmentsConfig.generateConfigs(json == null || !json.has("regen_enchantment_config_file") || json.get("regen_enchantment_config_file").getAsBoolean());
         FabricEnchantmentsConfig.loadConfig();
-
-        FEEvents.init();
 
         AUTO_SMELT = new AutoSmeltEnchantment();
         BEHEADING = new BeheadingEnchantment();
@@ -78,7 +76,6 @@ public class FabricEnchantments implements ModInitializer {
         REPLENISH = new ReplenishEnchantment();
         SOUL_SEEKER = new SoulSeekerEnchantment();
         PULSE = new PulseEnchantment();
-
-        System.out.println(UUID.randomUUID());
+        BEWITCHING = new BewitchingEnchantment();
     }
 }
