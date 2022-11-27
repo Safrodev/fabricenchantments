@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import safro.fabric.enchantments.config.Config;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 import safro.fabric.enchantments.enchantment.*;
-import safro.fabric.enchantments.event.FEEvents;
 
 import java.io.File;
 
