@@ -7,13 +7,14 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
@@ -22,7 +23,7 @@ public class EnderMindEnchantment extends Enchantment {
         super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[] {EquipmentSlot.HEAD});
 
         if (FabricEnchantmentsConfig.getBooleanValue("ender_mind")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "ender_mind"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "ender_mind"), this);
         }
     }
 

@@ -7,8 +7,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class NocturnalEnchantment extends Enchantment {
@@ -16,7 +17,7 @@ public class NocturnalEnchantment extends Enchantment {
         super(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[] {EquipmentSlot.HEAD});
 
         if (FabricEnchantmentsConfig.getBooleanValue("nocturnal")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "nocturnal"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "nocturnal"), this);
         }
     }
 

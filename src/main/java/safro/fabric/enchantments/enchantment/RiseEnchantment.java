@@ -8,8 +8,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class RiseEnchantment extends Enchantment {
@@ -17,7 +18,7 @@ public class RiseEnchantment extends Enchantment {
         super(Rarity.UNCOMMON, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("rise")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "rise"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "rise"), this);
         }
     }
 

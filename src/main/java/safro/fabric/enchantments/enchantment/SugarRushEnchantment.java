@@ -3,8 +3,9 @@ package safro.fabric.enchantments.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class SugarRushEnchantment extends Enchantment {
@@ -13,7 +14,7 @@ public class SugarRushEnchantment extends Enchantment {
         super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
 
         if (FabricEnchantmentsConfig.getBooleanValue("sugar_rush")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "sugar_rush"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "sugar_rush"), this);
         }
     }
 

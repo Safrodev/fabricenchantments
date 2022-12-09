@@ -8,8 +8,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
@@ -18,7 +19,7 @@ public class PoisonAspectEnchantment extends Enchantment {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("poison_aspect")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "poison_aspect"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "poison_aspect"), this);
         }
     }
 

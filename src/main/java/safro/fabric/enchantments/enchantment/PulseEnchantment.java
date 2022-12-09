@@ -3,8 +3,9 @@ package safro.fabric.enchantments.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class PulseEnchantment extends Enchantment {
@@ -13,7 +14,7 @@ public class PulseEnchantment extends Enchantment {
         super(Rarity.VERY_RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("pulse")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "pulse"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "pulse"), this);
         }
     }
 

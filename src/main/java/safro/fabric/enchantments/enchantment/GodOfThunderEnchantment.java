@@ -5,10 +5,11 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class GodOfThunderEnchantment extends Enchantment {
@@ -17,7 +18,7 @@ public class GodOfThunderEnchantment extends Enchantment {
         super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("god_of_thunder")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "god_of_thunder"), this);
         }
     }
 

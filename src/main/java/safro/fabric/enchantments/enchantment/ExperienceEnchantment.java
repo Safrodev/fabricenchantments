@@ -3,8 +3,9 @@ package safro.fabric.enchantments.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ExperienceEnchantment extends Enchantment {
@@ -13,7 +14,7 @@ public class ExperienceEnchantment extends Enchantment {
         super(Enchantment.Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("experience")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "experience"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "experience"), this);
         }
     }
 

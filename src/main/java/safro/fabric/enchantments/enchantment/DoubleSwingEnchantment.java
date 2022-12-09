@@ -9,9 +9,10 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.FabricEnchantments;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
@@ -21,7 +22,7 @@ public class DoubleSwingEnchantment extends Enchantment {
         super(Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("double_swing")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "double_swing"), this);
         }
     }
 

@@ -3,8 +3,9 @@ package safro.fabric.enchantments.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 import java.util.UUID;
@@ -16,7 +17,7 @@ public class TankEnchantment extends Enchantment {
         super(Rarity.UNCOMMON, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
 
         if (FabricEnchantmentsConfig.getBooleanValue("tank")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "tank"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "tank"), this);
         }
     }
 

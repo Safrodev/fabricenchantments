@@ -4,8 +4,9 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class ShotgunEnchantment extends Enchantment {
@@ -14,7 +15,7 @@ public class ShotgunEnchantment extends Enchantment {
         super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
 
         if (FabricEnchantmentsConfig.getBooleanValue("shotgun")) {
-            Registry.register(Registry.ENCHANTMENT, new Identifier("fabricenchantments", "shotgun"), this);
+            Registry.register(Registries.ENCHANTMENT, new Identifier("fabricenchantments", "shotgun"), this);
         }
     }
 
