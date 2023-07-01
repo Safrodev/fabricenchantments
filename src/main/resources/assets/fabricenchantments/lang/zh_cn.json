@@ -23,6 +23,7 @@
   "enchantment.fabricenchantments.replenish": "补种",
   "enchantment.fabricenchantments.soul_seeker": "猎魂",
   "enchantment.fabricenchantments.pulse": "脉冲",
+  "enchantment.fabricenchantments.bewitching": "魅惑",
 
   "enchantment.fabricenchantments.consumer.desc": "击杀生物时有几率回复饥饿值。",
   "enchantment.fabricenchantments.ice_aspect.desc": "攻击会对目标施加减速效果。",
@@ -47,5 +48,6 @@
   "enchantment.fabricenchantments.replenish.desc": "当破损时，立即消耗种子并将其种下。",
   "enchantment.fabricenchantments.pyromania.desc": "对着火的生物造成额外伤害。",
   "enchantment.fabricenchantments.soul_seeker.desc": "弹射物跟踪附近的生物。",
-  "enchantment.fabricenchantments.pulse.desc": "释放一道针对附近敌人的声波攻击。"
+  "enchantment.fabricenchantments.pulse.desc": "释放一道针对附近敌人的声波攻击。",
+  "enchantment.fabricenchantments.bewitching.desc": "遇到棘手的情况时，自动从你的库存中应用某些药水"
 }
