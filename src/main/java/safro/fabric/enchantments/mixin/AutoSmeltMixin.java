@@ -7,6 +7,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.server.world.ServerWorld;
@@ -30,11 +31,11 @@ public class AutoSmeltMixin {
         List<ItemStack> returnValue = cir.getReturnValue();
         if (EnchantmentHelper.getLevel(FabricEnchantments.AUTO_SMELT, stack) > 0) {
             for (ItemStack itemStack : returnValue) {
-                Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((smeltingRecipe -> {
-                    return smeltingRecipe.getIngredients().get(0).test(itemStack);
+                Optional<RecipeEntry<SmeltingRecipe>> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((smeltingRecipe -> {
+                    return smeltingRecipe.value().getIngredients().get(0).test(itemStack);
                 })).findFirst();
                 if (recipe.isPresent()) {
-                    ItemStack smelted = recipe.get().getOutput(null).copy();
+                    ItemStack smelted = recipe.get().value().getResult(null).copy();
                     smelted.setCount(itemStack.getCount());
                     items.add(smelted);
                 } else {
