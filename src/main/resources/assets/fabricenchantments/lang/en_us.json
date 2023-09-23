@@ -29,7 +29,7 @@
   "enchantment.fabricenchantments.ice_aspect.desc": "Slows the target down on each hit",
   "enchantment.fabricenchantments.poison_aspect.desc": "Poisons the target on each hit",
   "enchantment.fabricenchantments.rise.desc": "Upon being hit, the target floats up in the air for a short duration",
-  "enchantment.fabricenchantments.nocturnal.desc": "When the user is hit in the night they become invisible for a short duration",
+  "enchantment.fabricenchantments.nocturnal.desc": "Grants invisibility in the night; will be temporarily removed upon taking damage",
   "enchantment.fabricenchantments.tank.desc": "Grants the user 1.5 extra hearts per level",
   "enchantment.fabricenchantments.ender_mind.desc": "When the user is hit and is below 4 hearts, they get teleported away a short distance",
   "enchantment.fabricenchantments.sugar_rush.desc": "Upon killing an entity the wearer becomes fast and has increased jump height",

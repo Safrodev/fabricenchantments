@@ -32,6 +32,6 @@ public class PulseEnchantment extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other.type != EnchantmentTarget.CROSSBOW;
+        return super.canAccept(other) && other.target != EnchantmentTarget.CROSSBOW;
     }
 }

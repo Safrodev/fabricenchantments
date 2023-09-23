@@ -5,7 +5,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
@@ -52,7 +51,7 @@ public abstract class PulseMixin {
                     }
 
                     entity.playSound(SoundEvents.ENTITY_WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-                    target.damage(DamageSource.sonicBoom(entity), (float)FabricEnchantmentsConfig.getIntValue("pulse_damage"));
+                    target.damage(world.getDamageSources().sonicBoom(entity), (float)FabricEnchantmentsConfig.getIntValue("pulse_damage"));
                     double d = 0.5D * (1.0D - target.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
                     double e = 2.5D * (1.0D - target.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
                     target.addVelocity(vec3d3.getX() * e, vec3d3.getY() * d, vec3d3.getZ() * e);
@@ -75,14 +74,13 @@ public abstract class PulseMixin {
 
     @Unique
     private static boolean isValidTarget(@Nullable Entity entity, LivingEntity user) {
-        boolean var10000;
-        if (entity instanceof LivingEntity livingEntity) {
-            if (user.world == entity.world && EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(entity) && !user.isTeammate(entity) && livingEntity.getType() != EntityType.ARMOR_STAND && livingEntity.getType() != EntityType.WARDEN && !livingEntity.isInvulnerable() && !livingEntity.isDead() && user.world.getWorldBorder().contains(livingEntity.getBoundingBox())) {
-                var10000 = true;
-                return var10000;
+        if (entity instanceof LivingEntity livingEntity && livingEntity != user) {
+            if (user.getWorld() == entity.getWorld() && !livingEntity.isInvulnerable() && !livingEntity.isDead() && user.getWorld().getWorldBorder().contains(livingEntity.getBoundingBox())) {
+                if (EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(entity) && !user.isTeammate(entity) && livingEntity.getType() != EntityType.ARMOR_STAND && livingEntity.getType() != EntityType.WARDEN) {
+                    return true;
+                }
             }
         }
-        var10000 = false;
-        return var10000;
+        return false;
     }
 }

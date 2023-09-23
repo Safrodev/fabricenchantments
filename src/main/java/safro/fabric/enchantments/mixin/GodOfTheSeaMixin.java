@@ -19,7 +19,7 @@ public class GodOfTheSeaMixin {
     public void godOfTheSea(CallbackInfo ci) {
         LivingEntity user = (LivingEntity) (Object) this;
         if (FEUtil.hasEnchantment(user, FabricEnchantments.GOD_OF_THE_SEA)) {
-            if (!user.getEntityWorld().getBlockState(new BlockPos(user.getX(), user.getEyeY(), user.getZ())).isOf(Blocks.BUBBLE_COLUMN)) {
+            if (!user.getEntityWorld().getBlockState(BlockPos.ofFloored(user.getX(), user.getEyeY(), user.getZ())).isOf(Blocks.BUBBLE_COLUMN)) {
                 if (!((PlayerEntity) user).getAbilities().invulnerable) {
                     user.setAir(user.getMaxAir());
                 }

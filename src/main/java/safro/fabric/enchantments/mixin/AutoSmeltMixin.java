@@ -34,7 +34,7 @@ public class AutoSmeltMixin {
                     return smeltingRecipe.getIngredients().get(0).test(itemStack);
                 })).findFirst();
                 if (recipe.isPresent()) {
-                    ItemStack smelted = recipe.get().getOutput();
+                    ItemStack smelted = recipe.get().getOutput(null).copy();
                     smelted.setCount(itemStack.getCount());
                     items.add(smelted);
                 } else {

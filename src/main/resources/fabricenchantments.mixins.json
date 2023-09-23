@@ -18,7 +18,8 @@
     "SoulSeekerMixin",
     "PulseMixin",
     "BewitchingMixin",
-    "TankMixin"
+    "TankMixin",
+    "NocturnalMixin"
   ],
   "client": [
   ],

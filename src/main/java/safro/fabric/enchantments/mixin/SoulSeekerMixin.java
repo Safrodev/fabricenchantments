@@ -21,7 +21,7 @@ public class SoulSeekerMixin {
         if (projectile.getOwner() instanceof LivingEntity owner && FEUtil.hasEnchantment(owner, FabricEnchantments.SOUL_SEEKER)) {
             if (projectile.isAlive() && !projectile.isOnGround()) {
                 Box box = projectile.getBoundingBox().expand(FabricEnchantmentsConfig.getIntValue("soul_seeker_detection_range"));
-                LivingEntity target = projectile.world.getClosestEntity(LivingEntity.class, TargetPredicate.DEFAULT, null, projectile.getX(), projectile.getY(), projectile.getZ(), box);
+                LivingEntity target = projectile.getWorld().getClosestEntity(LivingEntity.class, TargetPredicate.DEFAULT, null, projectile.getX(), projectile.getY(), projectile.getZ(), box);
                 if (target != null && target.isAlive() && !target.isSpectator() && !(target == owner)) {
                     if (projectile.age >= 5) {
                         double x = target.getX() - projectile.getX();

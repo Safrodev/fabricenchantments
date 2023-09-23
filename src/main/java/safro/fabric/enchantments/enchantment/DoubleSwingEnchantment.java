@@ -38,7 +38,7 @@ public class DoubleSwingEnchantment extends Enchantment {
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         super.onTargetDamaged(user, target, level);
         if (user instanceof PlayerEntity player && player.getRandom().nextInt(100) <= FabricEnchantmentsConfig.getIntValue("double_swing_chance")) {
-            target.damage(DamageSource.player(player), player.getStackInHand(Hand.MAIN_HAND).getDamage());
+            target.damage(player.getDamageSources().playerAttack(player), player.getStackInHand(Hand.MAIN_HAND).getDamage());
             player.swingHand(Hand.MAIN_HAND);
         }
     }

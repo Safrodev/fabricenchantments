@@ -2,6 +2,7 @@ package safro.fabric.enchantments.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -26,5 +27,10 @@ public class AutoSmeltEnchantment extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 1;
+    }
+
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return super.canAccept(other) && other != Enchantments.SILK_TOUCH;
     }
 }

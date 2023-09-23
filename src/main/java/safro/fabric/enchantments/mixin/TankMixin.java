@@ -1,7 +1,5 @@
 package safro.fabric.enchantments.mixin;
 
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Multimaps;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;

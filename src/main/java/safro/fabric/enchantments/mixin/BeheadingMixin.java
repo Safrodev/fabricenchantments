@@ -31,20 +31,14 @@ public class BeheadingMixin {
             int chance = FabricEnchantmentsConfig.getIntValue("beheading_chance");
             if (user.getRandom().nextInt(100) <= chance) {
                 if (target instanceof ZombieEntity) {
-                    ItemEntity zombiedrop = new ItemEntity(target.world, target.getX(), target.getY(),
-                            target.getZ(),
-                            new ItemStack(Items.ZOMBIE_HEAD, 1));
-                    user.world.spawnEntity(zombiedrop);
+                    ItemEntity zombiedrop = new ItemEntity(target.getWorld(), target.getX(), target.getY(), target.getZ(), new ItemStack(Items.ZOMBIE_HEAD, 1));
+                    user.getWorld().spawnEntity(zombiedrop);
                 } else if (target instanceof CreeperEntity) {
-                    ItemEntity creeperdrop = new ItemEntity(target.world, target.getX(), target.getY(),
-                            target.getZ(),
-                            new ItemStack(Items.CREEPER_HEAD, 1));
-                    user.world.spawnEntity(creeperdrop);
+                    ItemEntity creeperdrop = new ItemEntity(target.getWorld(), target.getX(), target.getY(), target.getZ(), new ItemStack(Items.CREEPER_HEAD, 1));
+                    user.getWorld().spawnEntity(creeperdrop);
                 } else if (target instanceof SkeletonEntity) {
-                    ItemEntity skeletondrop = new ItemEntity(target.world, target.getX(), target.getY(),
-                            target.getZ(),
-                            new ItemStack(Items.SKELETON_SKULL, 1));
-                    user.world.spawnEntity(skeletondrop);
+                    ItemEntity skeletondrop = new ItemEntity(target.getWorld(), target.getX(), target.getY(), target.getZ(), new ItemStack(Items.SKELETON_SKULL, 1));
+                    user.getWorld().spawnEntity(skeletondrop);
                 }
             }
         }

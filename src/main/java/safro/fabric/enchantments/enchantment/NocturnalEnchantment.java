@@ -5,11 +5,10 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import safro.fabric.enchantments.config.FabricEnchantmentsConfig;
 
 public class NocturnalEnchantment extends Enchantment {
@@ -22,7 +21,9 @@ public class NocturnalEnchantment extends Enchantment {
     }
 
     @Override
-    public int getMinPower(int level) { return 20; }
+    public int getMinPower(int level) {
+        return 20;
+    }
 
     @Override
     public int getMaxLevel() {
@@ -31,8 +32,8 @@ public class NocturnalEnchantment extends Enchantment {
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(!user.getEntityWorld().isDay()) {
-            ((LivingEntity) user).addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY,FabricEnchantmentsConfig.getIntValue("nocturnal_duration"), 0, true, false));
+        if (user.getEntityWorld().isNight() && user.hasStatusEffect(StatusEffects.INVISIBILITY)) {
+            user.removeStatusEffect(StatusEffects.INVISIBILITY);
         }
     }
 }

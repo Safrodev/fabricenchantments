@@ -41,7 +41,7 @@ public class PyromaniaEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity && target.isOnFire()) {
-            target.damage(DamageSource.mob(user), level + 1);
+            target.damage(user.getDamageSources().mobAttack(user), level + 1);
         }
 
         super.onTargetDamaged(user, target, level);
